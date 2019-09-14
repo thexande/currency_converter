@@ -51,6 +51,7 @@ final class NumericGridInputView: UIView {
     final class ItemView: UIView, ViewRendering {
         enum Properties {
             enum Symbol {
+                
                 case delete
                 
                 var icon: UIImage? {
@@ -112,6 +113,7 @@ final class NumericGridInputView: UIView {
             
             cachedButton?.addTarget(self, action: #selector(didTouchDownButton), for: .touchDown)
             cachedButton?.addTarget(self, action: #selector(didTouchUpButton), for: .touchUpInside)
+            cachedButton?.addTarget(self, action: #selector(didTouchUpOutside), for: .touchUpOutside)
         }
         
         @objc private func didTouchDownButton() {
@@ -119,6 +121,11 @@ final class NumericGridInputView: UIView {
         }
         
         @objc private func didTouchUpButton() {
+            cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
+            onAction?(properties.action)
+        }
+        
+        @objc private func didTouchUpOutside() {
             cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
             onAction?(properties.action)
         }
