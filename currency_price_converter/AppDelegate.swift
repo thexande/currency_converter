@@ -75,6 +75,15 @@ final class NumericGridInputView: UIView {
                 print(symbol)
             }
         }
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            addLayoutGuide(centerGuide)
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
     }
     
     private func makeItemView(for item: ItemView.Properties) -> UIView {
