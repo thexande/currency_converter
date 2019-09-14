@@ -39,6 +39,106 @@ final class CurrencySelectView: UIView, ViewRendering {
     }
 }
 
+final class BackgroundCollectionView: UICollectionView, ViewRendering, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    struct Properties {
+        struct Page {
+            let image: UIImage?
+        }
+        
+        let pages: [Page]
+        
+        static let `default`: Properties = .init(pages: [])
+    }
+    
+    var properties: Properties = .default
+    
+    func render(_ properties: BackgroundCollectionView.Properties) {
+        self.properties = properties
+        reloadData()
+    }
+    
+    init() {
+        super.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        (collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
+        isPagingEnabled = true
+        delegate = self
+        dataSource = self
+        register(BackgroundPageCell.self, forCellWithReuseIdentifier: .init(describing: BackgroundPageCell.self))
+        backgroundColor = .clear
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return properties.pages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.frame.size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: .init(describing: BackgroundPageCell.self),
+                                                            for: indexPath) as? BackgroundPageCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.render(properties.pages[indexPath.item])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+}
+
+
+final class BackgroundPageCell: UICollectionViewCell, ViewRendering {
+    
+    typealias Properties = BackgroundCollectionView.Properties.Page
+    let backgroundImage = UIImageView()
+    
+    func render(_ properties: BackgroundCollectionView.Properties.Page) {
+        backgroundImage.image = properties.image
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.addSubview(backgroundImage)
+        backgroundImage.tintColor = .white
+        backgroundImage.layer.opacity = 0.1
+        
+        backgroundImage.heightAnchor == contentView.heightAnchor * 0.8
+        backgroundImage.widthAnchor == contentView.heightAnchor * 0.8
+        backgroundImage.centerAnchors == contentView.centerAnchors
+        clipsToBounds = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 final class CurrencyConverterFooterView: UIView, ViewRendering {
     
     typealias Properties = (CurrencySelectView.Properties, CurrencySelectView.Properties)
@@ -151,6 +251,7 @@ final class CurrencyConverterViewController: UIViewController {
     let originCurrencyDisplayView = CurrencyDisplayView()
     let destinationCurrencyDisplayView = CurrencyDisplayView()
     let circleWipe = CircleWipeView()
+    let background = BackgroundCollectionView()
    
     @objc func test() {
         circleWipe.render(.blue)
@@ -181,14 +282,16 @@ final class CurrencyConverterViewController: UIViewController {
         view.addSubview(rightAction)
         rightAction.trailingAnchor == view.trailingAnchor - 18
         rightAction.topAnchor == view.safeAreaLayoutGuide.topAnchor + 12
+
+        view.addSubview(background)
+        background.edgeAnchors == view.edgeAnchors
         
-        view.addSubview(backgroundImage)
-        backgroundImage.tintColor = .white
-        backgroundImage.layer.opacity = 0.1
+        background.render(.init(pages: [
+            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate)),
+            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate)),
+            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate))
+        ]))
         
-        backgroundImage.heightAnchor == view.heightAnchor * 0.8
-        backgroundImage.widthAnchor == view.heightAnchor * 0.8
-        backgroundImage.centerAnchors == view.centerAnchors
         
 //        view.backgroundColor = .bitcoin
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
