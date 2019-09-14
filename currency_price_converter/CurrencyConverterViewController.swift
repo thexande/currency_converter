@@ -21,15 +21,17 @@ final class CurrencySelectView: UIView, ViewRendering {
         addSubview(symbol)
         addSubview(currency)
         
-        symbol.sizeAnchors == .init(width: 24, height: 24)
+        symbol.sizeAnchors == .init(width: 42, height: 42)
         symbol.leadingAnchor == leadingAnchor
         symbol.verticalAnchors >= verticalAnchors
         symbol.centerYAnchor == centerYAnchor
         
-        currency.leadingAnchor == symbol.trailingAnchor + 12
+        currency.leadingAnchor == symbol.trailingAnchor
         currency.verticalAnchors >= verticalAnchors
         currency.trailingAnchor == trailingAnchor
         currency.centerYAnchor == centerYAnchor
+        currency.font = .systemFont(ofSize: 24, weight: .medium)
+        currency.textColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,7 +44,7 @@ final class CurrencyConverterFooterView: UIView, ViewRendering {
     typealias Properties = (CurrencySelectView.Properties, CurrencySelectView.Properties)
     
     let background = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-    let divider = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: .init(style: .dark)))
+    let divider = UIView() // UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: .init(style: .dark)))
     
     var cachedStack: UIView?
     
@@ -76,6 +78,8 @@ final class CurrencyConverterFooterView: UIView, ViewRendering {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        divider.backgroundColor = .lightGray
+        
         addSubview(background)
         background.edgeAnchors == edgeAnchors
         layer.cornerRadius = 10
@@ -83,7 +87,7 @@ final class CurrencyConverterFooterView: UIView, ViewRendering {
         heightAnchor == 64
         
         addSubview(divider)
-        divider.widthAnchor == 3
+        divider.widthAnchor == 0.5
         divider.centerXAnchor == centerXAnchor
         divider.verticalAnchors == verticalAnchors
 
@@ -141,8 +145,8 @@ final class CurrencyConverterViewController: UIViewController {
         view.addSubview(originCurrencyDisplayView)
         view.addSubview(destinationCurrencyDisplayView)
         
-        originCurrencyDisplayView.render(.init(positions: [.numeral(0)], symbol: UIImage(named:"btc")))
-        destinationCurrencyDisplayView.render(.init(positions: [.numeral(1), .numeral(1), .numeral(1)], symbol: UIImage(named:"btc")))
+        originCurrencyDisplayView.render(.init(positions: [.numeral(0)], symbol: UIImage(named:"btc_currency")))
+        destinationCurrencyDisplayView.render(.init(positions: [.numeral(1), .numeral(1), .numeral(1)], symbol: UIImage(named:"btc_currency")))
         
         originCurrencyDisplayView.topAnchor == view.safeAreaLayoutGuide.topAnchor + 36
         originCurrencyDisplayView.centerXAnchor == view.centerXAnchor
@@ -160,7 +164,7 @@ final class CurrencyConverterViewController: UIViewController {
         footer.horizontalAnchors == view.horizontalAnchors + 24
         footer.bottomAnchor == view.safeAreaLayoutGuide.bottomAnchor - 12
         
-        footer.render((.init(symbol: UIImage(named:"btc"), currency: "BTC"),
-                       .init(symbol: UIImage(named:"btc"), currency: "BTC")))
+        footer.render((.init(symbol: UIImage(named:"btc_currency"), currency: "BTC"),
+                       .init(symbol: UIImage(named:"btc_currency"), currency: "BTC")))
     }
 }
