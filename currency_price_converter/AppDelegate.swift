@@ -26,6 +26,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 final class CurrencyConverterViewController: UIViewController {
     
+    let footer = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .bitcoin
@@ -35,8 +37,17 @@ final class CurrencyConverterViewController: UIViewController {
         
         let grid = NumericGridInputView()
         view.addSubview(grid)
+        view.addSubview(footer)
+
         grid.horizontalAnchors == view.horizontalAnchors + 24
-        grid.centerYAnchor == view.centerYAnchor
+        grid.bottomAnchor == footer.topAnchor - 36
+        footer.horizontalAnchors == view.horizontalAnchors + 18
+        footer.bottomAnchor == view.safeAreaLayoutGuide.bottomAnchor
+        
+        footer.heightAnchor == 64
+        footer.layer.cornerRadius = 10
+        footer.backgroundColor = .white
+        
     }
 }
 
