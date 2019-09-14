@@ -18,11 +18,20 @@ final class CurrencyConverterViewController: UIViewController {
         let leftAction = UIButton()
         leftAction.setImage(UIImage(named: "person")?.withRenderingMode(.alwaysTemplate), for: .normal)
         leftAction.tintColor = .white
-        leftAction.sizeAnchors == .init(width: 36, height: 36)
+        leftAction.sizeAnchors == .init(width: 38, height: 38)
         
         view.addSubview(leftAction)
         leftAction.leadingAnchor == view.leadingAnchor + 18
         leftAction.centerYAnchor == view.safeAreaLayoutGuide.topAnchor
+        
+        let rightAction = UIButton()
+        rightAction.setImage(UIImage(named: "clock")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        rightAction.tintColor = .white
+        rightAction.sizeAnchors == .init(width: 38, height: 38)
+        
+        view.addSubview(rightAction)
+        rightAction.trailingAnchor == view.trailingAnchor - 18
+        rightAction.centerYAnchor == view.safeAreaLayoutGuide.topAnchor
         
         view.addSubview(backgroundImage)
         backgroundImage.tintColor = .white
