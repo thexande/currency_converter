@@ -2,11 +2,17 @@ import UIKit
 import Anchorage
 
 final class RootCoordinator: Coordinating {
-    let root: UINavigationController = UINavigationController()
+    let root: UINavigationController = LightNavigationController()
     
     init() {
         let view = CurrencyConverterViewController()
         root.setViewControllers([view], animated: true)
+    }
+}
+
+final class LightNavigationController: UINavigationController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
@@ -28,6 +34,10 @@ final class CurrencyConverterViewController: UIViewController {
     
     let footer = UIView()
     let backgroundImage = UIImageView(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate))
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -195,7 +205,9 @@ final class NumericGridInputView: UIView {
     }
     
     private func makeItemView(for item: ItemView.Properties) -> UIView {
-        return UIView()
+        let view = ItemView()
+        view.render(item)
+        return view
     }
     
     override init(frame: CGRect) {
@@ -204,26 +216,18 @@ final class NumericGridInputView: UIView {
         var rows: [UIStackView] = [.init(), .init(), .init()]
         
         for index in 1...9 {
-            
-            let item = ItemView()
-            item.render(.number(index))
-            
             if index <= 3 {
-                rows[0].addArrangedSubview(item)
+                rows[0].addArrangedSubview(makeItemView(for: .number(index)))
             } else if index <= 6 {
-                rows[1].addArrangedSubview(item)
+                rows[1].addArrangedSubview(makeItemView(for: .number(index)))
             } else if index <= 9 {
-                rows[2].addArrangedSubview(item)
+                rows[2].addArrangedSubview(makeItemView(for: .number(index)))
             }
         }
         
         let fourthRowProperties: [ItemView.Properties] = [.symbol(.decimal), .number(0), .symbol(.delete)]
         
-        rows.append(.init(arrangedSubviews: fourthRowProperties.map {
-            let view = ItemView()
-            view.render($0)
-            return view
-        }))
+        rows.append(.init(arrangedSubviews: fourthRowProperties.map(makeItemView(for:))))
         
         for row in rows {
             row.axis = .horizontal

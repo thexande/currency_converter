@@ -2,6 +2,6 @@ import UIKit
 
 extension UIColor {
     static var bitcoin: UIColor {
-        return UIColor(red:0.91, green:0.59, blue:0.24, alpha:1.0)
+        return UIColor(red:0.95, green:0.66, blue:0.00, alpha:1.0)
     }
 }
