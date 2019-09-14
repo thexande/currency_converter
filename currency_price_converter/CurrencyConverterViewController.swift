@@ -22,7 +22,7 @@ final class CurrencyConverterViewController: UIViewController {
         
         view.addSubview(leftAction)
         leftAction.leadingAnchor == view.leadingAnchor + 18
-        leftAction.centerYAnchor == view.safeAreaLayoutGuide.topAnchor
+        leftAction.topAnchor == view.safeAreaLayoutGuide.topAnchor + 12
         
         let rightAction = UIButton()
         rightAction.setImage(UIImage(named: "clock")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -31,7 +31,7 @@ final class CurrencyConverterViewController: UIViewController {
         
         view.addSubview(rightAction)
         rightAction.trailingAnchor == view.trailingAnchor - 18
-        rightAction.centerYAnchor == view.safeAreaLayoutGuide.topAnchor
+        rightAction.topAnchor == view.safeAreaLayoutGuide.topAnchor + 12
         
         view.addSubview(backgroundImage)
         backgroundImage.tintColor = .white

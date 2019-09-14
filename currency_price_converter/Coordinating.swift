@@ -12,7 +12,7 @@ protocol Launchable {
 }
 
 protocol Coordinating: Launchable {
-    var root: UINavigationController { get }
+    var root: UIViewController { get }
 }
 
 extension Coordinating {

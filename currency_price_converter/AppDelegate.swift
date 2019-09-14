@@ -2,11 +2,11 @@ import UIKit
 import Anchorage
 
 final class RootCoordinator: Coordinating {
-    let root: UINavigationController = LightNavigationController()
+    let root: UIViewController
     
     init() {
         let view = CurrencyConverterViewController()
-        root.setViewControllers([view], animated: true)
+        root = view
     }
 }
 
