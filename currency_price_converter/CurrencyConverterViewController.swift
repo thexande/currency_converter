@@ -1,10 +1,77 @@
 import UIKit
 import Anchorage
 
-final class CurrencyConverterFooterView: UIView {
+final class CurrencySelectView: UIView, ViewRendering {
+    
+    let symbol = UIImageView()
+    let currency = UILabel()
+    
+    struct Properties {
+        let symbol: UIImage?
+        let currency: String
+    }
+    
+    func render(_ properties: Properties) {
+        symbol.image = properties.symbol
+        currency.text = properties.currency
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(symbol)
+        addSubview(currency)
+        
+        symbol.sizeAnchors == .init(width: 24, height: 24)
+        symbol.leadingAnchor == leadingAnchor
+        symbol.verticalAnchors >= verticalAnchors
+        symbol.centerYAnchor == centerYAnchor
+        
+        currency.leadingAnchor == symbol.trailingAnchor + 12
+        currency.verticalAnchors >= verticalAnchors
+        currency.trailingAnchor == trailingAnchor
+        currency.centerYAnchor == centerYAnchor
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+final class CurrencyConverterFooterView: UIView, ViewRendering {
+    
+    typealias Properties = (CurrencySelectView.Properties, CurrencySelectView.Properties)
     
     let background = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     let divider = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: .init(style: .dark)))
+    
+    var cachedStack: UIView?
+    
+    func render(_ properties: (CurrencySelectView.Properties, CurrencySelectView.Properties)) {
+        
+        cachedStack?.removeFromSuperview()
+        
+        let left = CurrencySelectView()
+        left.render(properties.0)
+        
+        let right = CurrencySelectView()
+        right.render(properties.1)
+        
+        let wrapperOne = UIView()
+        wrapperOne.addSubview(left)
+        left.edgeAnchors >= wrapperOne.edgeAnchors
+        left.centerAnchors == wrapperOne.centerAnchors
+        
+        let wrapperTwo = UIView()
+        wrapperTwo.addSubview(right)
+        right.edgeAnchors >= wrapperTwo.edgeAnchors
+        right.centerAnchors == wrapperTwo.centerAnchors
+        
+        let stack = UIStackView(arrangedSubviews: [wrapperOne, wrapperTwo])
+        stack.distribution = .fillEqually
+        addSubview(stack)
+        stack.edgeAnchors == edgeAnchors
+        cachedStack = stack
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,15 +138,17 @@ final class CurrencyConverterViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         
-        originCurrencyDisplayView.render(.init(positions: [.numeral(0)], symbol: UIImage(named: "btc")))
-        destinationCurrencyDisplayView.render(.init(positions: [.numeral(1), .numeral(1), .numeral(1)], symbol: UIImage(named: "btc")))
+        view.addSubview(originCurrencyDisplayView)
+        view.addSubview(destinationCurrencyDisplayView)
         
-        let currencyDisplay = UIStackView(arrangedSubviews: [originCurrencyDisplayView, destinationCurrencyDisplayView])
-        currencyDisplay.axis = .vertical
-        view.addSubview(currencyDisplay)
+        originCurrencyDisplayView.render(.init(positions: [.numeral(0)], symbol: UIImage(named:"btc")))
+        destinationCurrencyDisplayView.render(.init(positions: [.numeral(1), .numeral(1), .numeral(1)], symbol: UIImage(named:"btc")))
         
-        currencyDisplay.topAnchor == view.safeAreaLayoutGuide.topAnchor + 36
-        currencyDisplay.centerXAnchor == view.centerXAnchor
+        originCurrencyDisplayView.topAnchor == view.safeAreaLayoutGuide.topAnchor + 36
+        originCurrencyDisplayView.centerXAnchor == view.centerXAnchor
+        
+        destinationCurrencyDisplayView.topAnchor == originCurrencyDisplayView.bottomAnchor + 18
+        destinationCurrencyDisplayView.centerXAnchor == view.centerXAnchor
         
         
         let grid = NumericGridInputView()
@@ -90,5 +159,8 @@ final class CurrencyConverterViewController: UIViewController {
         grid.bottomAnchor == footer.topAnchor - 36
         footer.horizontalAnchors == view.horizontalAnchors + 24
         footer.bottomAnchor == view.safeAreaLayoutGuide.bottomAnchor - 12
+        
+        footer.render((.init(symbol: UIImage(named:"btc"), currency: "BTC"),
+                       .init(symbol: UIImage(named:"btc"), currency: "BTC")))
     }
 }

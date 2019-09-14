@@ -2,6 +2,12 @@ import UIKit
 import Anchorage
 
 final class ItemView: UIView, ViewRendering {
+    
+    private let centerGuide = UILayoutGuide()
+    private var cachedButton: UIButton?
+    var onAction: ((Action) -> Void)?
+    var properties: Properties = .default
+    
     enum Properties {
         enum Symbol {
             
@@ -47,11 +53,6 @@ final class ItemView: UIView, ViewRendering {
         case delete
         case addDecimalPlace
     }
-    
-    private let centerGuide = UILayoutGuide()
-    private var cachedButton: UIButton?
-    var onAction: ((Action) -> Void)?
-    var properties: Properties = .default
     
     func render(_ properties: Properties) {
         
