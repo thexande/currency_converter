@@ -18,6 +18,11 @@
 		B0C3E2E0232D555E00586037 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2DF232D555E00586037 /* UIColor.swift */; };
 		B0C3E2E2232D5E8D00586037 /* ClosureProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2E1232D5E8D00586037 /* ClosureProxy.swift */; };
 		B0C3E2E4232D6E4800586037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C3E2E3232D6E4800586037 /* Assets.xcassets */; };
+		B0C3E2E6232D829900586037 /* CurrencyDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2E5232D829900586037 /* CurrencyDisplayView.swift */; };
+		B0C3E2E8232D82D000586037 /* CurrencyConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2E7232D82D000586037 /* CurrencyConverterViewController.swift */; };
+		B0C3E2EA232D830A00586037 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2E9232D830A00586037 /* ItemView.swift */; };
+		B0C3E2EC232D832B00586037 /* NumericGridInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2EB232D832B00586037 /* NumericGridInputView.swift */; };
+		B0C3E2EE232D834A00586037 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2ED232D834A00586037 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,11 @@
 		B0C3E2DF232D555E00586037 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B0C3E2E1232D5E8D00586037 /* ClosureProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureProxy.swift; sourceTree = "<group>"; };
 		B0C3E2E3232D6E4800586037 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0C3E2E5232D829900586037 /* CurrencyDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDisplayView.swift; sourceTree = "<group>"; };
+		B0C3E2E7232D82D000586037 /* CurrencyConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterViewController.swift; sourceTree = "<group>"; };
+		B0C3E2E9232D830A00586037 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		B0C3E2EB232D832B00586037 /* NumericGridInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericGridInputView.swift; sourceTree = "<group>"; };
+		B0C3E2ED232D834A00586037 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		C95E06557D7FDFBC88974E95 /* Pods-currency_price_converterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency_price_converterTests.debug.xcconfig"; path = "Target Support Files/Pods-currency_price_converterTests/Pods-currency_price_converterTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +156,11 @@
 				B0C3E2DD232D53E300586037 /* Coordinating.swift */,
 				B0C3E2DF232D555E00586037 /* UIColor.swift */,
 				B0C3E2E1232D5E8D00586037 /* ClosureProxy.swift */,
+				B0C3E2E5232D829900586037 /* CurrencyDisplayView.swift */,
+				B0C3E2E7232D82D000586037 /* CurrencyConverterViewController.swift */,
+				B0C3E2E9232D830A00586037 /* ItemView.swift */,
+				B0C3E2EB232D832B00586037 /* NumericGridInputView.swift */,
+				B0C3E2ED232D834A00586037 /* UIViewExtensions.swift */,
 			);
 			path = currency_price_converter;
 			sourceTree = "<group>";
@@ -388,9 +403,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C3E2E8232D82D000586037 /* CurrencyConverterViewController.swift in Sources */,
+				B0C3E2EC232D832B00586037 /* NumericGridInputView.swift in Sources */,
 				B0C3E2E0232D555E00586037 /* UIColor.swift in Sources */,
 				B0C3E2DE232D53E300586037 /* Coordinating.swift in Sources */,
 				B0C3E2B0232D52EC00586037 /* AppDelegate.swift in Sources */,
+				B0C3E2EA232D830A00586037 /* ItemView.swift in Sources */,
+				B0C3E2E6232D829900586037 /* CurrencyDisplayView.swift in Sources */,
+				B0C3E2EE232D834A00586037 /* UIViewExtensions.swift in Sources */,
 				B0C3E2E2232D5E8D00586037 /* ClosureProxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
