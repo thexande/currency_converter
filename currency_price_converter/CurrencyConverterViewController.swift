@@ -30,7 +30,7 @@ final class CurrencySelectView: UIView, ViewRendering {
         currency.verticalAnchors >= verticalAnchors
         currency.trailingAnchor == trailingAnchor
         currency.centerYAnchor == centerYAnchor
-        currency.font = .systemFont(ofSize: 24, weight: .medium)
+        currency.font = .systemFont(ofSize: 18, weight: .bold)
         currency.textColor = .white
     }
     
@@ -98,18 +98,71 @@ final class CurrencyConverterFooterView: UIView, ViewRendering {
     }
 }
 
+
+final class CircleWipeView: UIView, ViewRendering {
+    
+    typealias Properties = UIColor
+    
+    var cachedCircle: UIView?
+    var duration = 0.3
+    
+    func render(_ properties: UIColor) {
+        animateCircle(with: properties)
+    }
+    
+    func frameForCircle (withViewCenter viewCenter: CGPoint, size viewSize: CGSize, startPoint: CGPoint) -> CGRect {
+        let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
+        let yLength = fmax(startPoint.y, viewSize.height - startPoint.y)
+        
+        let offestVector = sqrt(xLength * xLength + yLength * yLength) * 2
+        let size = CGSize(width: offestVector, height: offestVector)
+        
+        return CGRect(origin: CGPoint.zero, size: size)
+    }
+    
+    private func animateCircle(with color: UIColor) {
+        let viewCenter = center
+        let viewSize = frame.size
+        
+        let circle = UIView()
+        
+        circle.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: .init(x: frame.width / 2, y: frame.height / 2))
+        
+        circle.layer.cornerRadius = circle.frame.size.height / 2
+        circle.center = .init(x: frame.width / 2, y: frame.height / 2)
+        circle.backgroundColor = color
+        circle.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+        addSubview(circle)
+        
+        cachedCircle = circle
+        
+        UIView.animate(withDuration: duration, animations: {
+            
+            circle.transform = CGAffineTransform.identity
+            
+        })
+    }
+}
+
+
 final class CurrencyConverterViewController: UIViewController {
     let footer = CurrencyConverterFooterView()
     let backgroundImage = UIImageView(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate))
     let originCurrencyDisplayView = CurrencyDisplayView()
     let destinationCurrencyDisplayView = CurrencyDisplayView()
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    let circleWipe = CircleWipeView()
+   
+    @objc func test() {
+        circleWipe.render(.blue)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        footer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(test)))
+        view.addSubview(circleWipe)
+        circleWipe.edgeAnchors == view.edgeAnchors
+        circleWipe.backgroundColor = .bitcoin
         
         let leftAction = UIButton()
         leftAction.setImage(UIImage(named: "person")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -137,7 +190,7 @@ final class CurrencyConverterViewController: UIViewController {
         backgroundImage.widthAnchor == view.heightAnchor * 0.8
         backgroundImage.centerAnchors == view.centerAnchors
         
-        view.backgroundColor = .bitcoin
+//        view.backgroundColor = .bitcoin
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
