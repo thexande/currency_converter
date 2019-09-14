@@ -46,53 +46,88 @@ public protocol ViewRendering {
     func render(_ properties: Properties)
 }
 
-
 final class NumericGridInputView: UIView {
     
     final class ItemView: UIView, ViewRendering {
-        
         enum Properties {
-            case number(Int)
-            case symbol(Symbol)
-        }
-        
-        enum Symbol {
-            
-            case delete
-            
-            var icon: UIImage? {
-                switch self {
-                case .delete:
-                    return nil
+            enum Symbol {
+                case delete
+                
+                var icon: UIImage? {
+                    switch self {
+                    case .delete:
+                        return nil
+                    }
+                }
+                
+                var action: Action {
+                    switch self {
+                    case .delete:
+                        return .delete
+                    }
                 }
             }
+            
+            case number(Int)
+            case symbol(Symbol)
+            
+            var action: Action {
+                switch self {
+                case let .number(number):
+                    return .selectedNumber(number)
+                case .symbol(let symbol):
+                    return symbol.action
+                }
+            }
+            
+            static let `default`: Properties = .number(-1)
+        }
+        
+        enum Action {
+            case selectedNumber(Int)
+            case delete
         }
     
         private let centerGuide = UILayoutGuide()
-        private var cachedItemView: UIView?
+        private var cachedButton: UIButton?
+        var onAction: ((Action) -> Void)?
+        var properties: Properties = .default
         
         func render(_ properties: Properties) {
             
-            cachedItemView?.removeFromSuperview()
+            cachedButton?.removeFromSuperview()
             
             switch properties {
             case .number(let number):
-                let label = UILabel()
-                label.text = "\(number)"
-                addSubview(label)
-                label.edgeAnchors == centerGuide.edgeAnchors
-                cachedItemView = label
+                let button = UIButton()
+                button.titleLabel?.font = UIFont.systemFont(ofSize: 28, weight: .medium)
+                button.setTitle("\(number)", for: .normal)
+                addSubview(button)
+                button.edgeAnchors == centerGuide.edgeAnchors
+                cachedButton = button
                 
             case .symbol(let symbol):
                 print(symbol)
             }
+            
+            cachedButton?.addTarget(self, action: #selector(didTouchDownButton), for: .touchDown)
+            cachedButton?.addTarget(self, action: #selector(didTouchUpButton), for: .touchUpInside)
+        }
+        
+        @objc private func didTouchDownButton() {
+            cachedButton?.titleLabel?.animate(fontSize: 48, duration: 0.1)
+        }
+        
+        @objc private func didTouchUpButton() {
+            cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
+            onAction?(properties.action)
         }
         
         override init(frame: CGRect) {
             super.init(frame: frame)
             addLayoutGuide(centerGuide)
             centerGuide.centerAnchors == centerAnchors
-            centerGuide.edgeAnchors >= edgeAnchors
+            centerGuide.edgeAnchors == edgeAnchors
         }
         
         required init?(coder aDecoder: NSCoder) {
@@ -138,5 +173,33 @@ final class NumericGridInputView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+extension UILabel {
+    func animate(fontSize: CGFloat, duration: TimeInterval) {
+        let startTransform = transform
+        let oldFrame = frame
+        var newFrame = oldFrame
+        let scaleRatio = fontSize / font.pointSize
+        
+        newFrame.size.width *= scaleRatio
+        newFrame.size.height *= scaleRatio
+        newFrame.origin.x = oldFrame.origin.x - (newFrame.size.width - oldFrame.size.width) * 0.5
+        newFrame.origin.y = oldFrame.origin.y - (newFrame.size.height - oldFrame.size.height) * 0.5
+        frame = newFrame
+        
+        font = font.withSize(fontSize)
+        
+        transform = CGAffineTransform.init(scaleX: 1 / scaleRatio, y: 1 / scaleRatio);
+        layoutIfNeeded()
+        
+        UIView.animate(withDuration: duration, animations: {
+            self.transform = startTransform
+            newFrame = self.frame
+        }) { (Bool) in
+            self.frame = newFrame
+        }
     }
 }
