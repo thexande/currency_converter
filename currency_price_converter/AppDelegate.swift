@@ -53,11 +53,14 @@ final class NumericGridInputView: UIView {
             enum Symbol {
                 
                 case delete
+                case decimal
                 
                 var icon: UIImage? {
                     switch self {
                     case .delete:
-                        return nil
+                        return UIImage(named: "delete")
+                    case .decimal:
+                        return UIImage(named: "decimal")
                     }
                 }
                 
@@ -65,6 +68,8 @@ final class NumericGridInputView: UIView {
                     switch self {
                     case .delete:
                         return .delete
+                    case .decimal:
+                        return .addDecimalPlace
                     }
                 }
             }
@@ -87,6 +92,7 @@ final class NumericGridInputView: UIView {
         enum Action {
             case selectedNumber(Int)
             case delete
+            case addDecimalPlace
         }
     
         private let centerGuide = UILayoutGuide()
@@ -109,6 +115,18 @@ final class NumericGridInputView: UIView {
                 
             case .symbol(let symbol):
                 print(symbol)
+                let button = UIButton()
+                
+                let image = UIImageView(image: symbol.icon)
+                button.addSubview(image)
+                image.centerAnchors == button.centerAnchors
+                image.contentMode = .scaleAspectFill
+                image.edgeAnchors >= button.edgeAnchors
+                
+                addSubview(button)
+                button.edgeAnchors == centerGuide.edgeAnchors
+                cachedButton = button
+                
             }
             
             cachedButton?.addTarget(self, action: #selector(didTouchDownButton), for: .touchDown)
@@ -149,12 +167,7 @@ final class NumericGridInputView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     
-        let rows: [UIStackView] = [.init(), .init(), .init()]
-        
-        for row in rows {
-            row.axis = .horizontal
-            row.distribution = .fillEqually
-        }
+        var rows: [UIStackView] = [.init(), .init(), .init()]
         
         for index in 1...9 {
             
@@ -168,6 +181,19 @@ final class NumericGridInputView: UIView {
             } else if index <= 9 {
                 rows[2].addArrangedSubview(item)
             }
+        }
+        
+        let fourthRowProperties: [ItemView.Properties] = [.symbol(.decimal), .number(0), .symbol(.delete)]
+        
+        rows.append(.init(arrangedSubviews: fourthRowProperties.map {
+            let view = ItemView()
+            view.render($0)
+            return view
+        }))
+        
+        for row in rows {
+            row.axis = .horizontal
+            row.distribution = .fillEqually
         }
         
         let stack = UIStackView(arrangedSubviews: rows)
