@@ -67,9 +67,7 @@ final class ItemView: UIView, ViewRendering {
             cachedButton = button
             
         case .symbol(let symbol):
-            print(symbol)
-            let button = UIButton()
-            
+            let button = UIButton()            
             let image = UIImageView(image: symbol.icon)
             button.addSubview(image)
             image.centerAnchors == button.centerAnchors

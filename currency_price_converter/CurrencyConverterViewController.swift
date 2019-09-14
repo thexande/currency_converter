@@ -1,9 +1,34 @@
 import UIKit
 import Anchorage
 
-final class CurrencyConverterViewController: UIViewController {
+final class CurrencyConverterFooterView: UIView {
     
-    let footer = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+    let background = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+    let divider = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: .init(style: .dark)))
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        addSubview(background)
+        background.edgeAnchors == edgeAnchors
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
+        heightAnchor == 64
+        
+        addSubview(divider)
+        divider.widthAnchor == 3
+        divider.centerXAnchor == centerXAnchor
+        divider.verticalAnchors == verticalAnchors
+
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+final class CurrencyConverterViewController: UIViewController {
+    let footer = CurrencyConverterFooterView()
     let backgroundImage = UIImageView(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate))
     let originCurrencyDisplayView = CurrencyDisplayView()
     let destinationCurrencyDisplayView = CurrencyDisplayView()
@@ -63,11 +88,7 @@ final class CurrencyConverterViewController: UIViewController {
         
         grid.horizontalAnchors == view.horizontalAnchors + 24
         grid.bottomAnchor == footer.topAnchor - 36
-        footer.horizontalAnchors == view.horizontalAnchors + 18
-        footer.bottomAnchor == view.safeAreaLayoutGuide.bottomAnchor
-        
-        footer.heightAnchor == 64
-        footer.layer.cornerRadius = 10
-        footer.layer.masksToBounds = true
+        footer.horizontalAnchors == view.horizontalAnchors + 24
+        footer.bottomAnchor == view.safeAreaLayoutGuide.bottomAnchor - 12
     }
 }
