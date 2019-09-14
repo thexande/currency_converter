@@ -1,3 +1,5 @@
+import UIKit
+
 /// Coordinator objects which can launch conform to this protocol.
 /// Other future methods in this protocol could support launching as a modal
 /// or onto a `UINavigationController` stack.

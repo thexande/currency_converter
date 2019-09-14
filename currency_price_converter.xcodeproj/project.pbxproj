@@ -14,6 +14,7 @@
 		B0C3E2C5232D52ED00586037 /* currency_price_converterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2C4232D52ED00586037 /* currency_price_converterTests.swift */; };
 		B0C3E2D0232D52ED00586037 /* currency_price_converterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2CF232D52ED00586037 /* currency_price_converterUITests.swift */; };
 		B0C3E2DE232D53E300586037 /* Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2DD232D53E300586037 /* Coordinating.swift */; };
+		B0C3E2E0232D555E00586037 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3E2DF232D555E00586037 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B0C3E2CF232D52ED00586037 /* currency_price_converterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currency_price_converterUITests.swift; sourceTree = "<group>"; };
 		B0C3E2D1232D52ED00586037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C3E2DD232D53E300586037 /* Coordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinating.swift; sourceTree = "<group>"; };
+		B0C3E2DF232D555E00586037 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				B0C3E2B8232D52ED00586037 /* LaunchScreen.storyboard */,
 				B0C3E2BB232D52ED00586037 /* Info.plist */,
 				B0C3E2DD232D53E300586037 /* Coordinating.swift */,
+				B0C3E2DF232D555E00586037 /* UIColor.swift */,
 			);
 			path = currency_price_converter;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0C3E2B2232D52EC00586037 /* ViewController.swift in Sources */,
+				B0C3E2E0232D555E00586037 /* UIColor.swift in Sources */,
 				B0C3E2DE232D53E300586037 /* Coordinating.swift in Sources */,
 				B0C3E2B0232D52EC00586037 /* AppDelegate.swift in Sources */,
 			);
