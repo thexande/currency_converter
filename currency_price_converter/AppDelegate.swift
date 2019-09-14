@@ -27,6 +27,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 final class CurrencyConverterViewController: UIViewController {
     
     let footer = UIView()
+    let backgroundImage = UIImageView(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,14 @@ final class CurrencyConverterViewController: UIViewController {
         footer.heightAnchor == 64
         footer.layer.cornerRadius = 10
         footer.backgroundColor = .white
+        
+        view.addSubview(backgroundImage)
+        backgroundImage.tintColor = .white
+        backgroundImage.layer.opacity = 0.1
+        
+        backgroundImage.heightAnchor == view.heightAnchor * 0.8
+        backgroundImage.widthAnchor == view.heightAnchor * 0.8
+        backgroundImage.centerAnchors == view.centerAnchors
         
     }
 }

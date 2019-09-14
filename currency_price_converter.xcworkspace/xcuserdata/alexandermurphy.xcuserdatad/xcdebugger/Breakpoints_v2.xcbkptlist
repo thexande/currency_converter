@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "currency_price_converter/AppDelegate.swift"
-            timestampString = "590179223.912333"
+            timestampString = "590180050.101757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "animate(fontSize:duration:)"
             landmarkType = "7">
          </BreakpointContent>
