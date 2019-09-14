@@ -52,6 +52,7 @@ final class BackgroundCollectionView: UICollectionView, ViewRendering, UICollect
     }
     
     var properties: Properties = .default
+    var onScrollRatioCompleteDidChange: ((CGFloat) -> Void)?
     
     func render(_ properties: BackgroundCollectionView.Properties) {
         self.properties = properties
@@ -109,6 +110,14 @@ final class BackgroundCollectionView: UICollectionView, ViewRendering, UICollect
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let percentage = scrollView.contentOffset.x.truncatingRemainder(dividingBy: scrollView.frame.width) / scrollView.frame.width
+        print(percentage)
+        if percentage > 0 {
+            onScrollRatioCompleteDidChange?(percentage)
+        }
     }
 }
 
@@ -201,13 +210,29 @@ final class CurrencyConverterFooterView: UIView, ViewRendering {
 
 final class CircleWipeView: UIView, ViewRendering {
     
-    typealias Properties = UIColor
+    struct Properties {
+        let complete: CGFloat
+        let color: UIColor
+    }
     
     var cachedCircle: UIView?
     var duration = 0.3
+    var animator: UIViewPropertyAnimator?
+    var hasConfiguredCircle = false
+   
+    var color: UIColor = .bitcoin {
+        didSet {
+            cachedCircle?.backgroundColor = color
+        }
+    }
     
-    func render(_ properties: UIColor) {
-        animateCircle(with: properties)
+    func render(_ properties: Properties) {
+        
+        if properties.color != color {
+            self.color = properties.color
+        }
+        
+        animator?.fractionComplete = properties.complete
     }
     
     func frameForCircle (withViewCenter viewCenter: CGPoint, size viewSize: CGSize, startPoint: CGPoint) -> CGRect {
@@ -220,26 +245,34 @@ final class CircleWipeView: UIView, ViewRendering {
         return CGRect(origin: CGPoint.zero, size: size)
     }
     
-    private func animateCircle(with color: UIColor) {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        guard frame.size.width > 0, frame.size.height > 0 else { return }
+        
+        if hasConfiguredCircle == false {
+            configureCircle()
+            hasConfiguredCircle = true
+        }
+    }
+    
+    private func configureCircle() {
         let viewCenter = center
         let viewSize = frame.size
         
         let circle = UIView()
-        
+
         circle.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: .init(x: frame.width / 2, y: frame.height / 2))
         
         circle.layer.cornerRadius = circle.frame.size.height / 2
         circle.center = .init(x: frame.width / 2, y: frame.height / 2)
-        circle.backgroundColor = color
         circle.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
         addSubview(circle)
         
         cachedCircle = circle
         
-        UIView.animate(withDuration: duration, animations: {
-            
+        animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut, animations: {
             circle.transform = CGAffineTransform.identity
-            
         })
     }
 }
@@ -254,7 +287,7 @@ final class CurrencyConverterViewController: UIViewController {
     let background = BackgroundCollectionView()
    
     @objc func test() {
-        circleWipe.render(.blue)
+        
     }
     
     override func viewDidLoad() {
@@ -264,6 +297,10 @@ final class CurrencyConverterViewController: UIViewController {
         view.addSubview(circleWipe)
         circleWipe.edgeAnchors == view.edgeAnchors
         circleWipe.backgroundColor = .bitcoin
+        
+        background.onScrollRatioCompleteDidChange = { [weak self] offset in
+            self?.circleWipe.render(.init(complete: offset, color: .blue))
+        }
         
         let leftAction = UIButton()
         leftAction.setImage(UIImage(named: "person")?.withRenderingMode(.alwaysTemplate), for: .normal)
