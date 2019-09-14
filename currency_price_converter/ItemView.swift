@@ -60,7 +60,7 @@ final class ItemView: UIView, ViewRendering {
         switch properties {
         case .number(let number):
             let button = UIButton()
-            button.titleLabel?.font = UIFont.systemFont(ofSize: 28, weight: .medium)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 28, weight: .bold)
             button.setTitle("\(number)", for: .normal)
             addSubview(button)
             button.edgeAnchors == centerGuide.edgeAnchors

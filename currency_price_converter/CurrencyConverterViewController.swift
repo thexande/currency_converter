@@ -3,7 +3,7 @@ import Anchorage
 
 final class CurrencyConverterViewController: UIViewController {
     
-    let footer = UIView()
+    let footer = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     let backgroundImage = UIImageView(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate))
     let originCurrencyDisplayView = CurrencyDisplayView()
     let destinationCurrencyDisplayView = CurrencyDisplayView()
@@ -14,6 +14,15 @@ final class CurrencyConverterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let leftAction = UIButton()
+        leftAction.setImage(UIImage(named: "person")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        leftAction.tintColor = .white
+        leftAction.sizeAnchors == .init(width: 36, height: 36)
+        
+        view.addSubview(leftAction)
+        leftAction.leadingAnchor == view.leadingAnchor + 18
+        leftAction.centerYAnchor == view.safeAreaLayoutGuide.topAnchor
         
         view.addSubview(backgroundImage)
         backgroundImage.tintColor = .white
@@ -35,7 +44,7 @@ final class CurrencyConverterViewController: UIViewController {
         currencyDisplay.axis = .vertical
         view.addSubview(currencyDisplay)
         
-        currencyDisplay.topAnchor == view.safeAreaLayoutGuide.topAnchor
+        currencyDisplay.topAnchor == view.safeAreaLayoutGuide.topAnchor + 36
         currencyDisplay.centerXAnchor == view.centerXAnchor
         
         
@@ -50,6 +59,6 @@ final class CurrencyConverterViewController: UIViewController {
         
         footer.heightAnchor == 64
         footer.layer.cornerRadius = 10
-        footer.backgroundColor = .white
+        footer.layer.masksToBounds = true
     }
 }
