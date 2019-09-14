@@ -1,4 +1,5 @@
 import UIKit
+import Anchorage
 
 final class RootCoordinator: Coordinating {
     let root: UINavigationController = UINavigationController()
@@ -31,6 +32,11 @@ final class CurrencyConverterViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
+        
+        let grid = NumericGridInputView()
+        view.addSubview(grid)
+        grid.horizontalAnchors == view.horizontalAnchors + 24
+        grid.centerYAnchor == view.centerYAnchor
     }
 }
 
@@ -63,13 +69,19 @@ final class NumericGridInputView: UIView {
         }
     
         private let centerGuide = UILayoutGuide()
+        private var cachedItemView: UIView?
         
         func render(_ properties: Properties) {
+            
+            cachedItemView?.removeFromSuperview()
+            
             switch properties {
             case .number(let number):
                 let label = UILabel()
                 label.text = "\(number)"
                 addSubview(label)
+                label.edgeAnchors == centerGuide.edgeAnchors
+                cachedItemView = label
                 
             case .symbol(let symbol):
                 print(symbol)
@@ -79,6 +91,8 @@ final class NumericGridInputView: UIView {
         override init(frame: CGRect) {
             super.init(frame: frame)
             addLayoutGuide(centerGuide)
+            centerGuide.centerAnchors == centerAnchors
+            centerGuide.edgeAnchors >= edgeAnchors
         }
         
         required init?(coder aDecoder: NSCoder) {
@@ -92,15 +106,34 @@ final class NumericGridInputView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+    
+        let rows: [UIStackView] = [.init(), .init(), .init()]
         
-        
-        for _ in 0..<3 {
-            // rows
-             let item = UIView()
-            
-            
-            
+        for row in rows {
+            row.axis = .horizontal
+            row.distribution = .fillEqually
         }
+        
+        for index in 1...9 {
+            
+            let item = ItemView()
+            item.render(.number(index))
+            
+            if index <= 3 {
+                rows[0].addArrangedSubview(item)
+            } else if index <= 6 {
+                rows[1].addArrangedSubview(item)
+            } else if index <= 9 {
+                rows[2].addArrangedSubview(item)
+            }
+        }
+        
+        let stack = UIStackView(arrangedSubviews: rows)
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        addSubview(stack)
+        stack.edgeAnchors == edgeAnchors
+        stack.heightAnchor == stack.widthAnchor * 0.8
     }
     
     required init?(coder aDecoder: NSCoder) {
