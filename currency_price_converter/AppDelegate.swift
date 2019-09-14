@@ -135,17 +135,31 @@ final class NumericGridInputView: UIView {
         }
         
         @objc private func didTouchDownButton() {
-            cachedButton?.titleLabel?.animate(fontSize: 48, duration: 0.1)
+            
+            guard let icon = cachedButton?.subviews.first(where: { $0 is UIImageView }) else {
+                cachedButton?.titleLabel?.animate(fontSize: 48, duration: 0.1)
+                return
+            }
+            
+            icon.animateScale(with: 48 / 28, duration: 0.1)
         }
         
         @objc private func didTouchUpButton() {
-            cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
-            onAction?(properties.action)
+            if let icon = cachedButton?.subviews.first(where: { $0 is UIImageView }) {
+                icon.animateScale(with: 28 / 48, duration: 0.1)
+            } else {
+                cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
+                onAction?(properties.action)
+            }
         }
         
         @objc private func didTouchUpOutside() {
-            cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
-            onAction?(properties.action)
+            if let icon = cachedButton?.subviews.first(where: { $0 is UIImageView }) {
+                icon.animateScale(with: 28 / 48, duration: 0.1)
+            } else {
+                cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
+                onAction?(properties.action)
+            }
         }
         
         override init(frame: CGRect) {
@@ -224,6 +238,32 @@ extension UILabel {
         frame = newFrame
         
         font = font.withSize(fontSize)
+        
+        transform = CGAffineTransform.init(scaleX: 1 / scaleRatio, y: 1 / scaleRatio);
+        layoutIfNeeded()
+        
+        UIView.animate(withDuration: duration, animations: {
+            self.transform = startTransform
+            newFrame = self.frame
+        }) { (Bool) in
+            self.frame = newFrame
+        }
+    }
+}
+
+
+extension UIView {
+    func animateScale(with ratio: CGFloat, duration: TimeInterval) {
+        let startTransform = transform
+        let oldFrame = frame
+        var newFrame = oldFrame
+        let scaleRatio = ratio
+        
+        newFrame.size.width *= scaleRatio
+        newFrame.size.height *= scaleRatio
+        newFrame.origin.x = oldFrame.origin.x - (newFrame.size.width - oldFrame.size.width) * 0.5
+        newFrame.origin.y = oldFrame.origin.y - (newFrame.size.height - oldFrame.size.height) * 0.5
+        frame = newFrame
         
         transform = CGAffineTransform.init(scaleX: 1 / scaleRatio, y: 1 / scaleRatio);
         layoutIfNeeded()
