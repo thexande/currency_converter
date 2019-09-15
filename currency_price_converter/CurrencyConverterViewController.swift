@@ -76,6 +76,20 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        view.addSubview(background)
+        background.edgeAnchors == view.edgeAnchors
+        
+        background.render(.init(pages: [
+            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .bitcoin),
+            .init(image: UIImage(named: "eth")?.withRenderingMode(.alwaysTemplate), backgroundColor: .black),
+            .init(image: UIImage(named: "ltc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .litecoin)
+        ]))
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        
         let leftAction = UIButton()
         leftAction.setImage(UIImage(named: "person")?.withRenderingMode(.alwaysTemplate), for: .normal)
         leftAction.tintColor = .white
@@ -93,19 +107,6 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
         view.addSubview(rightAction)
         rightAction.trailingAnchor == view.trailingAnchor - 18
         rightAction.topAnchor == view.safeAreaLayoutGuide.topAnchor + 12
-
-        view.addSubview(background)
-        background.edgeAnchors == view.edgeAnchors
-        
-        background.render(.init(pages: [
-            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .bitcoin),
-            .init(image: UIImage(named: "eth")?.withRenderingMode(.alwaysTemplate), backgroundColor: .black),
-            .init(image: UIImage(named: "ltc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .litecoin)
-        ]))
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
         
         view.addSubview(originCurrencyDisplayView)
         view.addSubview(destinationCurrencyDisplayView)
