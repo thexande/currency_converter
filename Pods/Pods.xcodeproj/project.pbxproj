@@ -3,28 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0894C67F3FBEDB601FBE53ACA7B11B46 /* Anchorage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B30F4FDFB69EAC3B14F7C3F371DA206 /* Anchorage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0894C67F3FBEDB601FBE53ACA7B11B46 /* Anchorage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5443D8055291B4FADC429B5F0A4B8D37 /* Anchorage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FABF7723AD4E054E5B0B35E3F775578 /* Pods-currency_price_converterUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEAC5C6A4929880FE506DF6369D0C15 /* Pods-currency_price_converterUITests-dummy.m */; };
-		2515FE8395F915588C47FD0044774981 /* AnchorGroupProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D312EB6C2681AFCAD104CD71A333093 /* AnchorGroupProvider.swift */; };
+		2515FE8395F915588C47FD0044774981 /* AnchorGroupProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E1794604D115046769CDA68E52ACEE /* AnchorGroupProvider.swift */; };
 		32AC7C3626F4C20982B10776958A36D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		390A42BBDAA270A1C80A699F67504AD9 /* Pods-currency_price_converterTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B0D3D17872781CD2293769A0F82ED /* Pods-currency_price_converterTests-dummy.m */; };
 		488375455A2CAFC654250BBA38BACBCA /* Pods-currency_price_converterUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0621796B58A9739E721A52274F2FD627 /* Pods-currency_price_converterUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CDC1D0DAB74399B029B6A8F80DBAC58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		4D4401D1E8FF59B2CEF811BB703E5777 /* Pods-currency_price_converter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9418CB5AC9D302953884DEC64A3B01 /* Pods-currency_price_converter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64A977A2926F264201E6758332BFD32C /* NSLayoutAnchor+MultiplierConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2957C569C83146F1B5A60519BB7CE9 /* NSLayoutAnchor+MultiplierConstraints.swift */; };
-		7200F9D340EB1FB939F733CC44288621 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E43AFC047D73D87CA1855418E152B3C /* Priority.swift */; };
-		780223D2A207693C6C4CE4EDB026C46E /* Anchorage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED03F3BD692B07788402ADFC3B3820D /* Anchorage-dummy.m */; };
+		49CD0AD73662F1A59F46A9DDDDB6FF44 /* Associated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0ADC290CDD6992FEAB64A1224E447 /* Associated.swift */; };
+		64A977A2926F264201E6758332BFD32C /* NSLayoutAnchor+MultiplierConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396D736C06287D9B77FD6C83722901E /* NSLayoutAnchor+MultiplierConstraints.swift */; };
+		7200F9D340EB1FB939F733CC44288621 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50A6524E4D81D8DBE0D596A3C81842 /* Priority.swift */; };
+		780223D2A207693C6C4CE4EDB026C46E /* Anchorage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D80DE86A8616A80E4F9442602575A0A /* Anchorage-dummy.m */; };
+		79684F8D01741D6BADEB278E1CF8E9D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		7C0E6E8ABC4E57C1F8582A5E18C499E0 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A2C1C9A5D8E163A64FF06FD2F48942 /* Haptic.swift */; };
+		829955AA9206FDD6A523921EAA13F9CA /* Hapticable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E882B0A173B97939F642694CF0A0EADF /* Hapticable.swift */; };
 		8EA14268D0E427DA1F318CBCFDC6F690 /* Pods-currency_price_converterTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28BE60A1C0E139C5DE62BD1C4616D4B1 /* Pods-currency_price_converterTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9FFC663B9F53215E4C99D057A5FEDAB7 /* Compatability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9253CEC6DCBD3BEA65EF9956720B25 /* Compatability.swift */; };
-		B3AD9D58AE9F6F363B1B6BD3420AFBA2 /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E9910442BDAE26EC948299120D9508 /* Internal.swift */; };
-		BA7760381D8203A6ECD1C55448AEC762 /* Pods-currency_price_converter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7B046EBCC022109D1013C13395B438 /* Pods-currency_price_converter-dummy.m */; };
+		8F4E7726527CB88C4367260820591C07 /* Haptica-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B720B048681FE2D83FFE462717047764 /* Haptica-dummy.m */; };
+		9493634041129BA6F83E374FA76382A1 /* Pods-currency_price_converter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9418CB5AC9D302953884DEC64A3B01 /* Pods-currency_price_converter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FFC663B9F53215E4C99D057A5FEDAB7 /* Compatability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8825DD66C020E55D1EB8E66C6B82BC6D /* Compatability.swift */; };
+		B3AD9D58AE9F6F363B1B6BD3420AFBA2 /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299DD7F981D6FA2FE0ED24A01ED61B6 /* Internal.swift */; };
 		BE805205585329CC8CA556E6C3F381F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		C20BFDB9F5F37393A04609B011A0C4B3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF978ACFA45C3D8DB89E30F9DB61D4 /* Extensions.swift */; };
+		C5EF1746C9A136A800991A9EBA0CBD2B /* Haptica-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8E22910C98C1D09563ACBF90743214 /* Haptica-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD11F1AE6CB4DFB34B3FD7BEFFB397DB /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B71E8A72110C36381D1D4BD1D7E730 /* Pattern.swift */; };
+		D855360B821808A5D5B62A24EDC8C751 /* Pods-currency_price_converter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7B046EBCC022109D1013C13395B438 /* Pods-currency_price_converter-dummy.m */; };
 		DC78A70213AD32045C96A71CE929E53F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		E98F4619E5A65F75289CBD1568D10E73 /* Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52458BDC6F82A2A58ED5EBDD6B538FD /* Anchorage.swift */; };
+		E98F4619E5A65F75289CBD1568D10E73 /* Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BBEC1A60DA8731C2B066B23963EAB4 /* Anchorage.swift */; };
+		FB15236D7DF9591AF16F6B3A0705453F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,13 @@
 			remoteGlobalIDString = D01244CB7E6DB22FD01C3BEECCFD8513;
 			remoteInfo = "Pods-currency_price_converter";
 		};
+		8AA6B96F9F06A71BF269E7AAD68E9B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D42DC7F21005DF10871F318716326E5E;
+			remoteInfo = Haptica;
+		};
 		95BF41BF8BB23455832576A7CD386C30 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -42,7 +57,7 @@
 			remoteGlobalIDString = D01244CB7E6DB22FD01C3BEECCFD8513;
 			remoteInfo = "Pods-currency_price_converter";
 		};
-		D9234C4B2559C14035C0B061C9FBD9AB /* PBXContainerItemProxy */ = {
+		FBCE26D3780C28F6391258157363ED4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -52,65 +67,77 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0299DD7F981D6FA2FE0ED24A01ED61B6 /* Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Internal.swift; path = Source/Internal.swift; sourceTree = "<group>"; };
 		0621796B58A9739E721A52274F2FD627 /* Pods-currency_price_converterUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-currency_price_converterUITests-umbrella.h"; sourceTree = "<group>"; };
 		0645A9316E0030FCA65FD89992790A56 /* Pods-currency_price_converterUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-currency_price_converterUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0973059EB6A0576C252BC6760C85FEE5 /* Anchorage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Anchorage-prefix.pch"; sourceTree = "<group>"; };
 		0A09E2AC4C1F876E1313458624776FC8 /* Pods-currency_price_converterTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-currency_price_converterTests-Info.plist"; sourceTree = "<group>"; };
+		10A2C1C9A5D8E163A64FF06FD2F48942 /* Haptic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Haptic.swift; path = Sources/Haptic.swift; sourceTree = "<group>"; };
 		11BA6523B5010AF982877C71A5E3E3D6 /* Pods-currency_price_converter-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-currency_price_converter-acknowledgements.markdown"; sourceTree = "<group>"; };
+		17B71E8A72110C36381D1D4BD1D7E730 /* Pattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Pattern.swift; path = Sources/Pattern.swift; sourceTree = "<group>"; };
 		1C484F58DC9988791FD832A435A78E23 /* Pods-currency_price_converterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-currency_price_converterUITests.release.xcconfig"; sourceTree = "<group>"; };
-		1E43AFC047D73D87CA1855418E152B3C /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Source/Priority.swift; sourceTree = "<group>"; };
-		1F5699F040E86BE36567A41620638E5E /* Anchorage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Anchorage.modulemap; sourceTree = "<group>"; };
-		283A54DE194F6C437EE1495D7875C2DC /* Anchorage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Anchorage-prefix.pch"; sourceTree = "<group>"; };
+		1D2953A59BA14FDED83B56159DD99242 /* Haptica-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Haptica-prefix.pch"; sourceTree = "<group>"; };
+		1D80DE86A8616A80E4F9442602575A0A /* Anchorage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Anchorage-dummy.m"; sourceTree = "<group>"; };
 		28BE60A1C0E139C5DE62BD1C4616D4B1 /* Pods-currency_price_converterTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-currency_price_converterTests-umbrella.h"; sourceTree = "<group>"; };
+		2D73B333B6C006173E78EA65D29844ED /* Anchorage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Anchorage.xcconfig; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3396D736C06287D9B77FD6C83722901E /* NSLayoutAnchor+MultiplierConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutAnchor+MultiplierConstraints.swift"; path = "Source/NSLayoutAnchor+MultiplierConstraints.swift"; sourceTree = "<group>"; };
 		3399E0C4E3A2C353DB8E307A1EAD353B /* Pods_currency_price_converter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_currency_price_converter.framework; path = "Pods-currency_price_converter.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		35E9910442BDAE26EC948299120D9508 /* Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Internal.swift; path = Source/Internal.swift; sourceTree = "<group>"; };
+		35722857CB203F06A3B640F120B4BF60 /* Haptica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Haptica.framework; path = Haptica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39626456B509CC895345087236BD9D18 /* Pods-currency_price_converterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-currency_price_converterUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3B30F4FDFB69EAC3B14F7C3F371DA206 /* Anchorage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Anchorage-umbrella.h"; sourceTree = "<group>"; };
+		39BBEC1A60DA8731C2B066B23963EAB4 /* Anchorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Anchorage.swift; path = Source/Anchorage.swift; sourceTree = "<group>"; };
 		3B3899AF48710EEE8173A28A33450C4E /* Pods_currency_price_converterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_currency_price_converterUITests.framework; path = "Pods-currency_price_converterUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B8E22910C98C1D09563ACBF90743214 /* Haptica-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Haptica-umbrella.h"; sourceTree = "<group>"; };
 		3E7B046EBCC022109D1013C13395B438 /* Pods-currency_price_converter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-currency_price_converter-dummy.m"; sourceTree = "<group>"; };
+		5123BCD62D3E365E79BA67AC9F03328A /* Haptica.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Haptica.modulemap; sourceTree = "<group>"; };
+		5443D8055291B4FADC429B5F0A4B8D37 /* Anchorage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Anchorage-umbrella.h"; sourceTree = "<group>"; };
 		54FF1EA5AB83A4394F2E020A1A882861 /* Pods_currency_price_converterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_currency_price_converterTests.framework; path = "Pods-currency_price_converterTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9418CB5AC9D302953884DEC64A3B01 /* Pods-currency_price_converter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-currency_price_converter-umbrella.h"; sourceTree = "<group>"; };
 		5C07838AE2803B290108342DA448F5DB /* Pods-currency_price_converterUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-currency_price_converterUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		61792A2DE4A454312BA4FC78878E7066 /* Pods-currency_price_converter-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-currency_price_converter-acknowledgements.plist"; sourceTree = "<group>"; };
-		66356512ECA59D97F6262F6B6F7AD09A /* Anchorage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Anchorage-Info.plist"; sourceTree = "<group>"; };
-		6D9253CEC6DCBD3BEA65EF9956720B25 /* Compatability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compatability.swift; path = Source/Compatability.swift; sourceTree = "<group>"; };
-		6ED03F3BD692B07788402ADFC3B3820D /* Anchorage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Anchorage-dummy.m"; sourceTree = "<group>"; };
+		66E00DA4D39F2C01C6C1C0AE4B028EEA /* Anchorage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Anchorage-Info.plist"; sourceTree = "<group>"; };
 		738B64F355D5D557EEF9D8F0972D71F5 /* Pods-currency_price_converterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-currency_price_converterTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C4622A886AC0952B7350CA30FEEA0B0 /* Pods-currency_price_converterUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-currency_price_converterUITests.modulemap"; sourceTree = "<group>"; };
-		7D2957C569C83146F1B5A60519BB7CE9 /* NSLayoutAnchor+MultiplierConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutAnchor+MultiplierConstraints.swift"; path = "Source/NSLayoutAnchor+MultiplierConstraints.swift"; sourceTree = "<group>"; };
-		7D312EB6C2681AFCAD104CD71A333093 /* AnchorGroupProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnchorGroupProvider.swift; path = Source/AnchorGroupProvider.swift; sourceTree = "<group>"; };
-		889920E75B31D8C6CC6226C9196EC996 /* Anchorage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Anchorage.xcconfig; sourceTree = "<group>"; };
+		7DA0ADC290CDD6992FEAB64A1224E447 /* Associated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Associated.swift; path = Sources/Associated.swift; sourceTree = "<group>"; };
+		86E0BF0B41511F4AA7E37D4BE84A3DD9 /* Anchorage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Anchorage.modulemap; sourceTree = "<group>"; };
+		8825DD66C020E55D1EB8E66C6B82BC6D /* Compatability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compatability.swift; path = Source/Compatability.swift; sourceTree = "<group>"; };
 		90408B14B5BC5D0AAB1C8DA50EF98EFD /* Pods-currency_price_converterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-currency_price_converterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		968648AC3DDFAB4D614901CE1C9FEF46 /* Pods-currency_price_converter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-currency_price_converter.modulemap"; sourceTree = "<group>"; };
 		9A1B0D3D17872781CD2293769A0F82ED /* Pods-currency_price_converterTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-currency_price_converterTests-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A88C25DA775897379BECED4AD7A7B5C9 /* Haptica.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Haptica.xcconfig; sourceTree = "<group>"; };
 		AA8599EDB41F1E18A54863CAF8968BC8 /* Pods-currency_price_converter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-currency_price_converter.debug.xcconfig"; sourceTree = "<group>"; };
 		ADEAC5C6A4929880FE506DF6369D0C15 /* Pods-currency_price_converterUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-currency_price_converterUITests-dummy.m"; sourceTree = "<group>"; };
 		B21AC6B9357EEA6D2BBD8395164CE603 /* Pods-currency_price_converter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-currency_price_converter-Info.plist"; sourceTree = "<group>"; };
 		B477F169CB917A9F07ABB3C6B0ED46BE /* Anchorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Anchorage.framework; path = Anchorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64A7FB61C13DE9C35BAF94FB6C9A1F5 /* Pods-currency_price_converterUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-currency_price_converterUITests-Info.plist"; sourceTree = "<group>"; };
+		B720B048681FE2D83FFE462717047764 /* Haptica-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Haptica-dummy.m"; sourceTree = "<group>"; };
 		BC23DD04E9DFBE5045A0D126D3BCF863 /* Pods-currency_price_converterTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-currency_price_converterTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C0EF978ACFA45C3D8DB89E30F9DB61D4 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
 		C905F81CF036A4646EA16244208E47DA /* Pods-currency_price_converterTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-currency_price_converterTests.modulemap"; sourceTree = "<group>"; };
+		CA50A6524E4D81D8DBE0D596A3C81842 /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Source/Priority.swift; sourceTree = "<group>"; };
+		D2BD3847BBEDF250C1A0391EDC2FAD72 /* Haptica-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Haptica-Info.plist"; sourceTree = "<group>"; };
 		D5469CD53CE1E2B39D6C105B3D01EA64 /* Pods-currency_price_converterTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-currency_price_converterTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		DE0D84487D02C3B427F4BCD414D03E83 /* Pods-currency_price_converter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-currency_price_converter.release.xcconfig"; sourceTree = "<group>"; };
-		E52458BDC6F82A2A58ED5EBDD6B538FD /* Anchorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Anchorage.swift; path = Source/Anchorage.swift; sourceTree = "<group>"; };
+		E882B0A173B97939F642694CF0A0EADF /* Hapticable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hapticable.swift; path = Sources/Hapticable.swift; sourceTree = "<group>"; };
 		F1BD64B0E66553D4D44C57775C7BE997 /* Pods-currency_price_converter-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-currency_price_converter-frameworks.sh"; sourceTree = "<group>"; };
+		F8E1794604D115046769CDA68E52ACEE /* AnchorGroupProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnchorGroupProvider.swift; path = Source/AnchorGroupProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B11E3D54406A6FDF024041F874112C1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CDC1D0DAB74399B029B6A8F80DBAC58 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0EB4A7FF1D51699F6B4AC31694018390 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				32AC7C3626F4C20982B10776958A36D6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2646074D5ACB1088F27F5A1076E093BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79684F8D01741D6BADEB278E1CF8E9D3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,28 +157,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C405C971478FB69928FAF5E7AE465440 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB15236D7DF9591AF16F6B3A0705453F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0FC101D5E4B2D6FB5D7A37F01B6C185C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F4B92A149A9D5D8D3043E8D9C08C574E /* Anchorage */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		11C4A80BB3CC58D901B257AE4DE76EA7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B477F169CB917A9F07ABB3C6B0ED46BE /* Anchorage.framework */,
-				3399E0C4E3A2C353DB8E307A1EAD353B /* Pods_currency_price_converter.framework */,
-				54FF1EA5AB83A4394F2E020A1A882861 /* Pods_currency_price_converterTests.framework */,
-				3B3899AF48710EEE8173A28A33450C4E /* Pods_currency_price_converterUITests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		1B45FA3F763B27AD6C957F8C4F6F3971 /* Pods-currency_price_converter */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +201,15 @@
 			path = "Target Support Files/Pods-currency_price_converterUITests";
 			sourceTree = "<group>";
 		};
+		301BFD2EC81A9FDEE32C0EB9BDD1A4BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B66C4C1EB19FC70DE780E4736269CFCB /* Anchorage */,
+				52FE780368E7D2772D9F5E7D786DB247 /* Haptica */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4202F2183A2C3E0D8E18D5FF9AF0C8E2 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,18 +220,73 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		5D64992AADAF284A630FA3EDE751EBCC /* Support Files */ = {
+		52FE780368E7D2772D9F5E7D786DB247 /* Haptica */ = {
 			isa = PBXGroup;
 			children = (
-				1F5699F040E86BE36567A41620638E5E /* Anchorage.modulemap */,
-				889920E75B31D8C6CC6226C9196EC996 /* Anchorage.xcconfig */,
-				6ED03F3BD692B07788402ADFC3B3820D /* Anchorage-dummy.m */,
-				66356512ECA59D97F6262F6B6F7AD09A /* Anchorage-Info.plist */,
-				283A54DE194F6C437EE1495D7875C2DC /* Anchorage-prefix.pch */,
-				3B30F4FDFB69EAC3B14F7C3F371DA206 /* Anchorage-umbrella.h */,
+				7DA0ADC290CDD6992FEAB64A1224E447 /* Associated.swift */,
+				C0EF978ACFA45C3D8DB89E30F9DB61D4 /* Extensions.swift */,
+				10A2C1C9A5D8E163A64FF06FD2F48942 /* Haptic.swift */,
+				E882B0A173B97939F642694CF0A0EADF /* Hapticable.swift */,
+				17B71E8A72110C36381D1D4BD1D7E730 /* Pattern.swift */,
+				A20C873DCF204A25AC6F3B610F580F8A /* Support Files */,
+			);
+			name = Haptica;
+			path = Haptica;
+			sourceTree = "<group>";
+		};
+		73EE1A2072DBE9411A0B7E018EFAEE46 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				86E0BF0B41511F4AA7E37D4BE84A3DD9 /* Anchorage.modulemap */,
+				2D73B333B6C006173E78EA65D29844ED /* Anchorage.xcconfig */,
+				1D80DE86A8616A80E4F9442602575A0A /* Anchorage-dummy.m */,
+				66E00DA4D39F2C01C6C1C0AE4B028EEA /* Anchorage-Info.plist */,
+				0973059EB6A0576C252BC6760C85FEE5 /* Anchorage-prefix.pch */,
+				5443D8055291B4FADC429B5F0A4B8D37 /* Anchorage-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Anchorage";
+			sourceTree = "<group>";
+		};
+		A20C873DCF204A25AC6F3B610F580F8A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5123BCD62D3E365E79BA67AC9F03328A /* Haptica.modulemap */,
+				A88C25DA775897379BECED4AD7A7B5C9 /* Haptica.xcconfig */,
+				B720B048681FE2D83FFE462717047764 /* Haptica-dummy.m */,
+				D2BD3847BBEDF250C1A0391EDC2FAD72 /* Haptica-Info.plist */,
+				1D2953A59BA14FDED83B56159DD99242 /* Haptica-prefix.pch */,
+				3B8E22910C98C1D09563ACBF90743214 /* Haptica-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Haptica";
+			sourceTree = "<group>";
+		};
+		ACB0282414DB31D71D3B86F814FA7BE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B477F169CB917A9F07ABB3C6B0ED46BE /* Anchorage.framework */,
+				35722857CB203F06A3B640F120B4BF60 /* Haptica.framework */,
+				3399E0C4E3A2C353DB8E307A1EAD353B /* Pods_currency_price_converter.framework */,
+				54FF1EA5AB83A4394F2E020A1A882861 /* Pods_currency_price_converterTests.framework */,
+				3B3899AF48710EEE8173A28A33450C4E /* Pods_currency_price_converterUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B66C4C1EB19FC70DE780E4736269CFCB /* Anchorage */ = {
+			isa = PBXGroup;
+			children = (
+				39BBEC1A60DA8731C2B066B23963EAB4 /* Anchorage.swift */,
+				F8E1794604D115046769CDA68E52ACEE /* AnchorGroupProvider.swift */,
+				8825DD66C020E55D1EB8E66C6B82BC6D /* Compatability.swift */,
+				0299DD7F981D6FA2FE0ED24A01ED61B6 /* Internal.swift */,
+				3396D736C06287D9B77FD6C83722901E /* NSLayoutAnchor+MultiplierConstraints.swift */,
+				CA50A6524E4D81D8DBE0D596A3C81842 /* Priority.swift */,
+				73EE1A2072DBE9411A0B7E018EFAEE46 /* Support Files */,
+			);
+			name = Anchorage;
+			path = Anchorage;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -222,8 +302,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				0FC101D5E4B2D6FB5D7A37F01B6C185C /* Pods */,
-				11C4A80BB3CC58D901B257AE4DE76EA7 /* Products */,
+				301BFD2EC81A9FDEE32C0EB9BDD1A4BC /* Pods */,
+				ACB0282414DB31D71D3B86F814FA7BE4 /* Products */,
 				4202F2183A2C3E0D8E18D5FF9AF0C8E2 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -234,21 +314,6 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F4B92A149A9D5D8D3043E8D9C08C574E /* Anchorage */ = {
-			isa = PBXGroup;
-			children = (
-				E52458BDC6F82A2A58ED5EBDD6B538FD /* Anchorage.swift */,
-				7D312EB6C2681AFCAD104CD71A333093 /* AnchorGroupProvider.swift */,
-				6D9253CEC6DCBD3BEA65EF9956720B25 /* Compatability.swift */,
-				35E9910442BDAE26EC948299120D9508 /* Internal.swift */,
-				7D2957C569C83146F1B5A60519BB7CE9 /* NSLayoutAnchor+MultiplierConstraints.swift */,
-				1E43AFC047D73D87CA1855418E152B3C /* Priority.swift */,
-				5D64992AADAF284A630FA3EDE751EBCC /* Support Files */,
-			);
-			name = Anchorage;
-			path = Anchorage;
 			sourceTree = "<group>";
 		};
 		F9A320E5936C312B99F2954C749C860F /* Pods-currency_price_converterTests */ = {
@@ -278,6 +343,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80607C5F97F98857001C839E91A6E88A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5EF1746C9A136A800991A9EBA0CBD2B /* Haptica-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB0310F3989C9E9650B6BEAF0A921AEB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9493634041129BA6F83E374FA76382A1 /* Pods-currency_price_converter-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD942A14BE63630BBAD1325178688C61 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,14 +372,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				488375455A2CAFC654250BBA38BACBCA /* Pods-currency_price_converterUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3060A3E1D0ABB7E8BEB0E68E330704F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4D4401D1E8FF59B2CEF811BB703E5777 /* Pods-currency_price_converter-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,21 +436,40 @@
 		};
 		D01244CB7E6DB22FD01C3BEECCFD8513 /* Pods-currency_price_converter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64D4CB334A9C414FEFF4D299FFFAD1DE /* Build configuration list for PBXNativeTarget "Pods-currency_price_converter" */;
+			buildConfigurationList = 3C4EDE57AFBCF6D9CD764DEA45085FBE /* Build configuration list for PBXNativeTarget "Pods-currency_price_converter" */;
 			buildPhases = (
-				F3060A3E1D0ABB7E8BEB0E68E330704F /* Headers */,
-				3C0CA7C8BDF73E1E0C29561FC3704DB4 /* Sources */,
-				0B11E3D54406A6FDF024041F874112C1 /* Frameworks */,
-				453548D3B7E6B7BBC76FEDAB69E1A462 /* Resources */,
+				AB0310F3989C9E9650B6BEAF0A921AEB /* Headers */,
+				AE2624171C0B518DA7D62547585F4ABC /* Sources */,
+				C405C971478FB69928FAF5E7AE465440 /* Frameworks */,
+				19AF15FF40B13CA57FACC270ADF30C31 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A5EA5F9C65301FA64EF9BB27988546D5 /* PBXTargetDependency */,
+				67445108F370E85322BAB94800B4B7B3 /* PBXTargetDependency */,
+				6CD988CDF263A43436D40B7FC62133AF /* PBXTargetDependency */,
 			);
 			name = "Pods-currency_price_converter";
 			productName = "Pods-currency_price_converter";
 			productReference = 3399E0C4E3A2C353DB8E307A1EAD353B /* Pods_currency_price_converter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D42DC7F21005DF10871F318716326E5E /* Haptica */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0DFFD7FCCEE982ED336E2F07E3E7663 /* Build configuration list for PBXNativeTarget "Haptica" */;
+			buildPhases = (
+				80607C5F97F98857001C839E91A6E88A /* Headers */,
+				93457FAF2C6C2EFE4BFA397DBC324CD5 /* Sources */,
+				2646074D5ACB1088F27F5A1076E093BB /* Frameworks */,
+				1DBCCF27C2A395614D7CF7B104AB0841 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Haptica;
+			productName = Haptica;
+			productReference = 35722857CB203F06A3B640F120B4BF60 /* Haptica.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -390,18 +482,19 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 11C4A80BB3CC58D901B257AE4DE76EA7 /* Products */;
+			productRefGroup = ACB0282414DB31D71D3B86F814FA7BE4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				4607A9D579EE69C57F52971930107170 /* Anchorage */,
+				D42DC7F21005DF10871F318716326E5E /* Haptica */,
 				D01244CB7E6DB22FD01C3BEECCFD8513 /* Pods-currency_price_converter */,
 				081DF54F2270DA96C7F102AF2A847B3F /* Pods-currency_price_converterTests */,
 				AC3268539B7F1B553EEF861F5C639A02 /* Pods-currency_price_converterUITests */,
@@ -410,7 +503,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		453548D3B7E6B7BBC76FEDAB69E1A462 /* Resources */ = {
+		19AF15FF40B13CA57FACC270ADF30C31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DBCCF27C2A395614D7CF7B104AB0841 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -455,11 +555,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C0CA7C8BDF73E1E0C29561FC3704DB4 /* Sources */ = {
+		93457FAF2C6C2EFE4BFA397DBC324CD5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA7760381D8203A6ECD1C55448AEC762 /* Pods-currency_price_converter-dummy.m in Sources */,
+				49CD0AD73662F1A59F46A9DDDDB6FF44 /* Associated.swift in Sources */,
+				C20BFDB9F5F37393A04609B011A0C4B3 /* Extensions.swift in Sources */,
+				7C0E6E8ABC4E57C1F8582A5E18C499E0 /* Haptic.swift in Sources */,
+				8F4E7726527CB88C4367260820591C07 /* Haptica-dummy.m in Sources */,
+				829955AA9206FDD6A523921EAA13F9CA /* Hapticable.swift in Sources */,
+				CD11F1AE6CB4DFB34B3FD7BEFFB397DB /* Pattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +573,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FABF7723AD4E054E5B0B35E3F775578 /* Pods-currency_price_converterUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE2624171C0B518DA7D62547585F4ABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D855360B821808A5D5B62A24EDC8C751 /* Pods-currency_price_converter-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,17 +595,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		67445108F370E85322BAB94800B4B7B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Anchorage;
+			target = 4607A9D579EE69C57F52971930107170 /* Anchorage */;
+			targetProxy = FBCE26D3780C28F6391258157363ED4F /* PBXContainerItemProxy */;
+		};
 		67BA224B4D4C8AF5F80DC586F796448F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-currency_price_converter";
 			target = D01244CB7E6DB22FD01C3BEECCFD8513 /* Pods-currency_price_converter */;
 			targetProxy = 95BF41BF8BB23455832576A7CD386C30 /* PBXContainerItemProxy */;
 		};
-		A5EA5F9C65301FA64EF9BB27988546D5 /* PBXTargetDependency */ = {
+		6CD988CDF263A43436D40B7FC62133AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Anchorage;
-			target = 4607A9D579EE69C57F52971930107170 /* Anchorage */;
-			targetProxy = D9234C4B2559C14035C0B061C9FBD9AB /* PBXContainerItemProxy */;
+			name = Haptica;
+			target = D42DC7F21005DF10871F318716326E5E /* Haptica */;
+			targetProxy = 8AA6B96F9F06A71BF269E7AAD68E9B72 /* PBXContainerItemProxy */;
 		};
 		BFFC1FF915507FE1B748139A4675EF0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -503,9 +622,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2565E4AE9D1D3A763BA6F180FCB1BD66 /* Release */ = {
+		25C2C20BBB161C830A3D83242848E374 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE0D84487D02C3B427F4BCD414D03E83 /* Pods-currency_price_converter.release.xcconfig */;
+			baseConfigurationReference = AA8599EDB41F1E18A54863CAF8968BC8 /* Pods-currency_price_converter.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -536,15 +655,14 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		2A4032145C3F2D3835CD7E307A860A36 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 889920E75B31D8C6CC6226C9196EC996 /* Anchorage.xcconfig */;
+			baseConfigurationReference = 2D73B333B6C006173E78EA65D29844ED /* Anchorage.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -609,6 +727,41 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		416D30C8B76CA9CC1809DF47CCD5984F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A88C25DA775897379BECED4AD7A7B5C9 /* Haptica.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Haptica/Haptica-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Haptica/Haptica-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Haptica/Haptica.modulemap";
+				PRODUCT_MODULE_NAME = Haptica;
+				PRODUCT_NAME = Haptica;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -718,44 +871,6 @@
 			};
 			name = Release;
 		};
-		91DFDF3D5422BA538EB7C4591345D7A5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA8599EDB41F1E18A54863CAF8968BC8 /* Pods-currency_price_converter.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-currency_price_converter/Pods-currency_price_converter-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-currency_price_converter/Pods-currency_price_converter.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		A27713CB74E99AF202AADC23200A32F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -855,9 +970,84 @@
 			};
 			name = Release;
 		};
+		BC24DE2100B29D50DF764C28DBA119F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A88C25DA775897379BECED4AD7A7B5C9 /* Haptica.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Haptica/Haptica-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Haptica/Haptica-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Haptica/Haptica.modulemap";
+				PRODUCT_MODULE_NAME = Haptica;
+				PRODUCT_NAME = Haptica;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C1EC62A802D3C6814C18A71693946CE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE0D84487D02C3B427F4BCD414D03E83 /* Pods-currency_price_converter.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-currency_price_converter/Pods-currency_price_converter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-currency_price_converter/Pods-currency_price_converter.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		EEC8C974F56B1172257C1FC18B27A52E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 889920E75B31D8C6CC6226C9196EC996 /* Anchorage.xcconfig */;
+			baseConfigurationReference = 2D73B333B6C006173E78EA65D29844ED /* Anchorage.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -941,6 +1131,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		3C4EDE57AFBCF6D9CD764DEA45085FBE /* Build configuration list for PBXNativeTarget "Pods-currency_price_converter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25C2C20BBB161C830A3D83242848E374 /* Debug */,
+				C1EC62A802D3C6814C18A71693946CE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -959,11 +1158,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64D4CB334A9C414FEFF4D299FFFAD1DE /* Build configuration list for PBXNativeTarget "Pods-currency_price_converter" */ = {
+		A0DFFD7FCCEE982ED336E2F07E3E7663 /* Build configuration list for PBXNativeTarget "Haptica" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				91DFDF3D5422BA538EB7C4591345D7A5 /* Debug */,
-				2565E4AE9D1D3A763BA6F180FCB1BD66 /* Release */,
+				416D30C8B76CA9CC1809DF47CCD5984F /* Debug */,
+				BC24DE2100B29D50DF764C28DBA119F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

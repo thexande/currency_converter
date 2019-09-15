@@ -7,6 +7,9 @@ target 'currency_price_converter' do
 
   # Pods for currency_price_converter
   pod 'Anchorage'
+  pod 'Haptica'
+  
+  
   target 'currency_price_converterTests' do
     inherit! :search_paths
     # Pods for testing
