@@ -5,6 +5,8 @@ final class BackgroundPageCell: UICollectionViewCell, ViewRendering {
     
     typealias Properties = BackgroundCollectionView.Properties.Page
     let backgroundImage = UIImageView()
+    var duration = 0.3
+    var animator: UIViewPropertyAnimator?
     
     func render(_ properties: BackgroundCollectionView.Properties.Page) {
         backgroundImage.image = properties.image
@@ -20,6 +22,10 @@ final class BackgroundPageCell: UICollectionViewCell, ViewRendering {
         backgroundImage.widthAnchor == contentView.heightAnchor * 0.8
         backgroundImage.centerAnchors == contentView.centerAnchors
         clipsToBounds = true
+        
+        animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut, animations: {
+            self.backgroundImage.transform =  CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+        })
     }
     
     required init?(coder aDecoder: NSCoder) {

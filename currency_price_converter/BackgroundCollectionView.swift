@@ -86,6 +86,9 @@ final class BackgroundCollectionView: UICollectionView, ViewRendering, UICollect
         let circleWipeColor: UIColor
         let direction: CircleWipeView.Properties.Direction
         
+        let percentage = scrollView.contentOffset.x.truncatingRemainder(dividingBy: scrollView.frame.width) / scrollView.frame.width
+        print(percentage)
+        
         if scrollView.panGestureRecognizer.translation(in: scrollView.superview).x > 0 {
             
             
@@ -100,6 +103,11 @@ final class BackgroundCollectionView: UICollectionView, ViewRendering, UICollect
             backgroundColor = fromColor
             circleWipeColor = toColor
             direction = .left
+            
+//            if percentage > 0 {
+//                (cellForItem(at: .init(row: to, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = abs(1 - percentage)
+//                (cellForItem(at: .init(row: from, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = percentage
+//            }
             
             print("left from: \(from), to: \(to)")
 
@@ -116,15 +124,19 @@ final class BackgroundCollectionView: UICollectionView, ViewRendering, UICollect
             
             print("right from: \(from), to: \(to)")
             
+            
+//            if percentage > 0 {
+//                (cellForItem(at: .init(row: to, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = percentage
+//                (cellForItem(at: .init(row: from, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = abs(1 - percentage)
+//            }
+            
             backgroundColor = fromColor
             circleWipeColor = toColor
             direction = .right
             
         }
         
-        let percentage = scrollView.contentOffset.x.truncatingRemainder(dividingBy: scrollView.frame.width) / scrollView.frame.width
-        print(percentage)
-        
+    
         circleWipe.render(.init(direction: direction,
                                 complete: abs(percentage),
                                 backgroundColor: backgroundColor,
