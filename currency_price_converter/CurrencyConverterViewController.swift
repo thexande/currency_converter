@@ -2,6 +2,7 @@ import UIKit
 import Anchorage
 
 final class CurrencyConverterPresenter {
+    
     var render: ((CurrencyConverterViewController.Properties) -> Void)?
     
     var properties: CurrencyConverterViewController.Properties = .default {

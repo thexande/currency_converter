@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "currency_price_converter/CurrencyConverterViewController.swift"
-            timestampString = "590211151.673023"
+            timestampString = "590211620.558202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "9"
-            endingLineNumber = "9"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
             landmarkName = "properties"
             landmarkType = "24">
          </BreakpointContent>

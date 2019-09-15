@@ -60,7 +60,7 @@ final class CircleWipeView: UIView, ViewRendering {
         
         circle.layer.cornerRadius = circle.frame.size.height / 2
         circle.center = .init(x: frame.width / 2, y: frame.height / 2)
-        circle.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+        circle.transform = CGAffineTransform(scaleX: .leastNonzeroMagnitude, y: .leastNonzeroMagnitude)
         addSubview(circle)
         
         cachedCircle = circle
