@@ -95,12 +95,19 @@ final class ItemView: UIView, ViewRendering {
             return
         }
         
-        icon.animateScale(with: 48 / 28, duration: 0.1)
+        let ratio: CGFloat = 48 / 28
+        UIView.animate(withDuration: 0.1) {
+            icon.transform = CGAffineTransform(scaleX: ratio, y: ratio)
+        }
     }
     
     @objc private func didTouchUpButton() {
         if let icon = cachedButton?.subviews.first(where: { $0 is UIImageView }) {
-            icon.animateScale(with: 28 / 48, duration: 0.1)
+            
+            UIView.animate(withDuration: 0.1) {
+                icon.transform = .identity
+            }
+            
             onAction?(properties.action)
         } else {
             cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
@@ -110,7 +117,11 @@ final class ItemView: UIView, ViewRendering {
     
     @objc private func didTouchUpOutside() {
         if let icon = cachedButton?.subviews.first(where: { $0 is UIImageView }) {
-            icon.animateScale(with: 28 / 48, duration: 0.1)
+
+            UIView.animate(withDuration: 0.1) {
+                icon.transform = .identity
+            }
+            
             onAction?(properties.action)
         } else {
             cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
