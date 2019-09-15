@@ -1,5 +1,6 @@
 import UIKit
 import Anchorage
+import Haptica
 
 final class ItemView: UIView, ViewRendering {
     
@@ -103,16 +104,15 @@ final class ItemView: UIView, ViewRendering {
     
     @objc private func didTouchUpButton() {
         if let icon = cachedButton?.subviews.first(where: { $0 is UIImageView }) {
-            
             UIView.animate(withDuration: 0.1) {
                 icon.transform = .identity
             }
-            
-            onAction?(properties.action)
         } else {
             cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
-            onAction?(properties.action)
         }
+        
+        onAction?(properties.action)
+        Haptic.impact(.light).generate()
     }
     
     @objc private func didTouchUpOutside() {
@@ -121,12 +121,12 @@ final class ItemView: UIView, ViewRendering {
             UIView.animate(withDuration: 0.1) {
                 icon.transform = .identity
             }
-            
-            onAction?(properties.action)
         } else {
             cachedButton?.titleLabel?.animate(fontSize: 28, duration: 0.2)
-            onAction?(properties.action)
         }
+        
+        onAction?(properties.action)
+        Haptic.impact(.light).generate()
     }
     
     override init(frame: CGRect) {
