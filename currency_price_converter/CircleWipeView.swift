@@ -5,25 +5,26 @@ final class CircleWipeView: UIView, ViewRendering {
     
     struct Properties {
         let complete: CGFloat
-        let color: UIColor
-        static let `default` = Properties(complete: 0, color: .black)
+        let backgroundColor: UIColor
+        let circleWipeColor: UIColor
+        static let `default` = Properties(complete: 0, backgroundColor: .black, circleWipeColor: .black)
     }
     
     var cachedCircle: UIView?
     var duration = 0.3
     var animator: UIViewPropertyAnimator?
     var hasConfiguredCircle = false
+    let circle = UIView()
     
-    var color: UIColor = .bitcoin {
-        didSet {
-            cachedCircle?.backgroundColor = color
-        }
-    }
     
     func render(_ properties: Properties) {
         
-        if properties.color != color {
-            self.color = properties.color
+        if properties.backgroundColor != backgroundColor {
+            self.backgroundColor = properties.backgroundColor
+        }
+        
+        if properties.circleWipeColor != circle.backgroundColor {
+            circle.backgroundColor = properties.circleWipeColor
         }
         
         animator?.fractionComplete = properties.complete
@@ -54,7 +55,6 @@ final class CircleWipeView: UIView, ViewRendering {
         let viewCenter = center
         let viewSize = frame.size
         
-        let circle = UIView()
         
         circle.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: .init(x: frame.width / 2, y: frame.height / 2))
         
@@ -63,10 +63,9 @@ final class CircleWipeView: UIView, ViewRendering {
         circle.transform = CGAffineTransform(scaleX: .leastNonzeroMagnitude, y: .leastNonzeroMagnitude)
         addSubview(circle)
         
-        cachedCircle = circle
         
         animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut, animations: {
-            circle.transform = CGAffineTransform.identity
+            self.circle.transform = CGAffineTransform.identity
         })
     }
 }

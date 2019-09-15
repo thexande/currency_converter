@@ -20,7 +20,7 @@ extension CurrencyConverterPresenter: CurrencyConverterViewDelegate {
         var properties = self.properties
         
 //        let color = properties.backgroundProperties.
-        properties.circleProperties = .init(complete: ratio, color: .purple)
+//        properties.circleProperties = .init(complete: ratio, color: .purple)
         self.properties = properties
     }
 }
@@ -35,7 +35,6 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
     private let footer = CurrencyConverterFooterView()
     private let originCurrencyDisplayView = CurrencyDisplayView()
     private let destinationCurrencyDisplayView = CurrencyDisplayView()
-    private let circleWipe = CircleWipeView()
     private let background = BackgroundCollectionView()
     
     weak var delegate: CurrencyConverterViewDelegate?
@@ -57,7 +56,7 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
    
     
     func render(_ properties: CurrencyConverterViewController.Properties) {
-        circleWipe.render(properties.circleProperties)
+//        circleWipe.render(properties.circleProperties)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -66,10 +65,6 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(circleWipe)
-        circleWipe.edgeAnchors == view.edgeAnchors
-        circleWipe.backgroundColor = .bitcoin
         
         background.onScrollRatioCompleteDidChange = { [weak self] offset in
             self?.delegate?.didScrollBackground(with: offset)
@@ -97,9 +92,9 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
         background.edgeAnchors == view.edgeAnchors
         
         background.render(.init(pages: [
-            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate)),
-            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate)),
-            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate))
+            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .bitcoin),
+            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .blue),
+            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .purple)
         ]))
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
