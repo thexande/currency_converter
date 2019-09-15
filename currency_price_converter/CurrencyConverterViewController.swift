@@ -16,18 +16,22 @@ final class CurrencyConverterPresenter {
 }
 
 extension CurrencyConverterPresenter: CurrencyConverterViewDelegate {
-    func didScrollBackground(with ratio: CGFloat) {
-        var properties = self.properties
-        
-//        let color = properties.backgroundProperties.
-//        properties.circleProperties = .init(complete: ratio, color: .purple)
-        self.properties = properties
+    func didSelectNumeral(_ numberal: Int) {
+        print("added number\(numberal)")
+    }
+    
+    func didSelectDecimal() {
+        print("added decimal")
+    }
+    
+    func didSelectDelete() {
+        print("selected delete")
     }
 }
 
 
-protocol CurrencyConverterViewDelegate: AnyObject {
-    func didScrollBackground(with ratio: CGFloat)
+protocol CurrencyConverterViewDelegate: NumericInputGridViewDelegate {
+    
 }
 
 final class CurrencyConverterViewController: UIViewController, ViewRendering {
@@ -36,8 +40,14 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
     private let originCurrencyDisplayView = CurrencyDisplayView()
     private let destinationCurrencyDisplayView = CurrencyDisplayView()
     private let background = BackgroundCollectionView()
+    private let grid = NumericGridInputView()
     
-    weak var delegate: CurrencyConverterViewDelegate?
+    weak var delegate: CurrencyConverterViewDelegate? {
+        didSet {
+            grid.delegate = delegate
+        }
+    }
+    
     private var properties: Properties = .default
     
     struct Properties {
@@ -65,10 +75,6 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        background.onScrollRatioCompleteDidChange = { [weak self] offset in
-            self?.delegate?.didScrollBackground(with: offset)
-        }
         
         let leftAction = UIButton()
         leftAction.setImage(UIImage(named: "person")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -114,7 +120,6 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
         destinationCurrencyDisplayView.centerXAnchor == view.centerXAnchor
         
         
-        let grid = NumericGridInputView()
         view.addSubview(grid)
         view.addSubview(footer)
         

@@ -1,11 +1,32 @@
 import UIKit
 import Anchorage
 
+protocol NumericInputGridViewDelegate: AnyObject {
+    func didSelectNumeral(_ numberal: Int)
+    func didSelectDecimal()
+    func didSelectDelete()
+}
+
 final class NumericGridInputView: UIView {
+    
+    weak var delegate: NumericInputGridViewDelegate?
     
     private func makeItemView(for item: ItemView.Properties) -> UIView {
         let view = ItemView()
         view.render(item)
+        
+        view.onAction = { [weak self] action in
+            switch action {
+            case .addDecimalPlace:
+                self?.delegate?.didSelectDecimal()
+            case .delete:
+                self?.delegate?.didSelectDelete()
+            case .selectedNumber(let numeral):
+                self?.delegate?.didSelectNumeral(numeral)
+            }
+            
+        }
+        
         return view
     }
     
