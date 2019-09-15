@@ -2,10 +2,20 @@ import UIKit
 import Anchorage
 
 final class RootCoordinator: Coordinating {
+    
     let root: UIViewController
+    private let presenter = CurrencyConverterPresenter()
+
     
     init() {
         let view = CurrencyConverterViewController()
+        
+        presenter.render = { [weak view] properties in
+            view?.render(properties)
+        }
+        
+        view.delegate = presenter
+        
         root = view
     }
 }

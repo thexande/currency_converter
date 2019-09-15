@@ -1,6 +1,30 @@
 import UIKit
 import Anchorage
 
+final class CurrencyConverterPresenter {
+    var render: ((CurrencyConverterViewController.Properties) -> Void)?
+    
+    var properties: CurrencyConverterViewController.Properties = .default {
+        didSet {
+            render?(properties)
+        }
+    }
+    
+    
+    
+}
+
+extension CurrencyConverterPresenter: CurrencyConverterViewDelegate {
+    func didScrollBackground(with ratio: CGFloat) {
+        
+    }
+}
+
+
+protocol CurrencyConverterViewDelegate: AnyObject {
+    func didScrollBackground(with ratio: CGFloat)
+}
+
 final class CurrencyConverterViewController: UIViewController, ViewRendering {
     
     private let footer = CurrencyConverterFooterView()
@@ -9,7 +33,8 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
     private let circleWipe = CircleWipeView()
     private let background = BackgroundCollectionView()
     
-    var properties: Properties = .default
+    weak var delegate: CurrencyConverterViewDelegate?
+    private var properties: Properties = .default
     
     struct Properties {
         let footerProperties: CurrencyConverterFooterView.Properties
@@ -39,7 +64,8 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
         circleWipe.backgroundColor = .bitcoin
         
         background.onScrollRatioCompleteDidChange = { [weak self] offset in
-            self?.circleWipe.render(.init(complete: offset, color: .blue))
+            self?.delegate?.didScrollBackground(with: offset)
+//            self?.circleWipe.render(.init(complete: offset, color: .blue))
         }
         
         let leftAction = UIButton()
@@ -69,8 +95,6 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
             .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate))
         ]))
         
-        
-//        view.backgroundColor = .bitcoin
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
