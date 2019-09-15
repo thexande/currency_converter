@@ -9,6 +9,8 @@ final class CurrencySelectView: UIView, ViewRendering {
     struct Properties {
         let symbol: UIImage?
         let currency: String
+        
+        static let `default` = Properties(symbol: nil, currency: "")
     }
     
     func render(_ properties: Properties) {
@@ -277,14 +279,35 @@ final class CircleWipeView: UIView, ViewRendering {
     }
 }
 
+enum Currency {
+    case btc
+    case eth
+    case usd
+}
 
 final class CurrencyConverterViewController: UIViewController {
+    
     let footer = CurrencyConverterFooterView()
     let backgroundImage = UIImageView(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate))
     let originCurrencyDisplayView = CurrencyDisplayView()
     let destinationCurrencyDisplayView = CurrencyDisplayView()
     let circleWipe = CircleWipeView()
     let background = BackgroundCollectionView()
+    
+    var properties: Properties = .default
+    
+    struct Properties {
+        let footerProperties: CurrencyConverterFooterView.Properties
+        let originCurrency: Currency
+        let destinationCurrency: Currency
+        let originProperties: CurrencyDisplayView.Properties
+        let destinationProperties: CurrencyDisplayView.Properties
+        static let `default` = Properties(footerProperties: (.default, .default),
+                                          originCurrency: .btc,
+                                          destinationCurrency: .btc,
+                                          originProperties: .default,
+                                          destinationProperties: .default)
+    }
    
     @objc func test() {
         

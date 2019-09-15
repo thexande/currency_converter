@@ -12,6 +12,8 @@ final class CurrencyDisplayView: UIView, ViewRendering {
         
         var positions: [Position]
         var symbol: UIImage?
+        
+        static let `default` = Properties(positions: [], symbol: nil)
     }
     
     func render(_ properties: CurrencyDisplayView.Properties) {
