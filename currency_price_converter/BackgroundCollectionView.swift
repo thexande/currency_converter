@@ -84,39 +84,51 @@ final class BackgroundCollectionView: UICollectionView, ViewRendering, UICollect
         
         let backgroundColor: UIColor
         let circleWipeColor: UIColor
+        let direction: CircleWipeView.Properties.Direction
         
         if scrollView.panGestureRecognizer.translation(in: scrollView.superview).x > 0 {
-            print("left")
+            
+            
+            let indexes = Array(indexPathsForVisibleItems.sorted().reversed())
             
             guard
-                let to = indexPathsForVisibleItems.first?.item,
-                let toColor = properties.pages[safe: to]?.backgroundColor,
-                let from = indexPathsForVisibleItems[safe: 1]?.item,
-                let fromColor = properties.pages[safe: from]?.backgroundColor else { return }
-            
-            backgroundColor = toColor
-            circleWipeColor = fromColor
-            
-        } else {
-            print("right")
-            guard
-                let from = indexPathsForVisibleItems.first?.item,
-                let to = indexPathsForVisibleItems[safe: 1]?.item,
+                let from = indexes.first?.item,
+                let to = indexes[safe: 1]?.item,
                 let toColor = properties.pages[safe: to]?.backgroundColor,
                 let fromColor = properties.pages[safe: from]?.backgroundColor else { return }
-            
             
             backgroundColor = fromColor
             circleWipeColor = toColor
+            direction = .left
+            
+            print("left from: \(from), to: \(to)")
+
+            
+        } else {
+            
+            let indexes = Array(indexPathsForVisibleItems.sorted())
+
+            guard
+                let from = indexes.first?.item,
+                let to = indexes[safe: 1]?.item,
+                let toColor = properties.pages[safe: to]?.backgroundColor,
+                let fromColor = properties.pages[safe: from]?.backgroundColor else { return }
+            
+            print("right from: \(from), to: \(to)")
+            
+            backgroundColor = fromColor
+            circleWipeColor = toColor
+            direction = .right
             
         }
         
         let percentage = scrollView.contentOffset.x.truncatingRemainder(dividingBy: scrollView.frame.width) / scrollView.frame.width
         print(percentage)
-        if percentage > 0 {
-            circleWipe.render(.init(complete: percentage, backgroundColor: backgroundColor, circleWipeColor: circleWipeColor))
-//            onScrollRatioCompleteDidChange?(percentage)
-        }
+        
+        circleWipe.render(.init(direction: direction,
+                                complete: abs(percentage),
+                                backgroundColor: backgroundColor,
+                                circleWipeColor: circleWipeColor))
     }
 }
 

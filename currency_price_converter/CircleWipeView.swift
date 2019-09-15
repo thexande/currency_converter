@@ -4,10 +4,15 @@ import Anchorage
 final class CircleWipeView: UIView, ViewRendering {
     
     struct Properties {
+        enum Direction {
+            case left
+            case right
+        }
+        let direction: Direction
         let complete: CGFloat
         let backgroundColor: UIColor
         let circleWipeColor: UIColor
-        static let `default` = Properties(complete: 0, backgroundColor: .black, circleWipeColor: .black)
+        static let `default` = Properties(direction: .left, complete: 0, backgroundColor: .black, circleWipeColor: .black)
     }
     
     var cachedCircle: UIView?
@@ -27,7 +32,13 @@ final class CircleWipeView: UIView, ViewRendering {
             circle.backgroundColor = properties.circleWipeColor
         }
         
-        animator?.fractionComplete = properties.complete
+        animator?.fractionComplete = properties.direction == .right
+            ? properties.complete
+            : abs(1 - properties.complete)
+        
+        if properties.complete == 0 {
+            backgroundColor = circle.backgroundColor
+        }
     }
     
     func frameForCircle (withViewCenter viewCenter: CGPoint, size viewSize: CGSize, startPoint: CGPoint) -> CGRect {
