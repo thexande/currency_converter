@@ -279,36 +279,31 @@ final class CircleWipeView: UIView, ViewRendering {
     }
 }
 
-enum Currency {
-    case btc
-    case eth
-    case usd
-}
-
-final class CurrencyConverterViewController: UIViewController {
+final class CurrencyConverterViewController: UIViewController, ViewRendering {
     
-    let footer = CurrencyConverterFooterView()
-    let backgroundImage = UIImageView(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate))
-    let originCurrencyDisplayView = CurrencyDisplayView()
-    let destinationCurrencyDisplayView = CurrencyDisplayView()
-    let circleWipe = CircleWipeView()
-    let background = BackgroundCollectionView()
+    private let footer = CurrencyConverterFooterView()
+    private let originCurrencyDisplayView = CurrencyDisplayView()
+    private let destinationCurrencyDisplayView = CurrencyDisplayView()
+    private let circleWipe = CircleWipeView()
+    private let background = BackgroundCollectionView()
     
     var properties: Properties = .default
     
     struct Properties {
         let footerProperties: CurrencyConverterFooterView.Properties
-        let originCurrency: Currency
-        let destinationCurrency: Currency
         let originProperties: CurrencyDisplayView.Properties
         let destinationProperties: CurrencyDisplayView.Properties
+        let backgroundProperties: BackgroundCollectionView.Properties
         static let `default` = Properties(footerProperties: (.default, .default),
-                                          originCurrency: .btc,
-                                          destinationCurrency: .btc,
                                           originProperties: .default,
-                                          destinationProperties: .default)
+                                          destinationProperties: .default ,backgroundProperties: .default)
     }
    
+    
+    func render(_ properties: CurrencyConverterViewController.Properties) {
+        
+    }
+    
     @objc func test() {
         
     }
