@@ -21,6 +21,14 @@ final class CircleWipeView: UIView, ViewRendering {
     let circle = UIView()
     var cachedOffset: CGFloat = 0
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .bitcoin
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func render(_ properties: Properties) {
         

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "currency_price_converter/CircleWipeView.swift"
-            timestampString = "590283577.3279819"
+            timestampString = "590283683.316202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "render(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "currency_price_converter/CircleWipeView.swift"
-            timestampString = "590283577.328079"
+            timestampString = "590283683.316537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "render(_:)"
             landmarkType = "7">
          </BreakpointContent>
