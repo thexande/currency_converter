@@ -16,7 +16,11 @@ final class CurrencyConverterPresenter {
 
 extension CurrencyConverterPresenter: CurrencyConverterViewDelegate {
     func didScrollBackground(with ratio: CGFloat) {
+        var properties = self.properties
         
+//        let color = properties.backgroundProperties.
+        properties.circleProperties = .init(complete: ratio, color: .purple)
+        self.properties = properties
     }
 }
 
@@ -37,35 +41,37 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
     private var properties: Properties = .default
     
     struct Properties {
-        let footerProperties: CurrencyConverterFooterView.Properties
-        let originProperties: CurrencyDisplayView.Properties
-        let destinationProperties: CurrencyDisplayView.Properties
-        let backgroundProperties: BackgroundCollectionView.Properties
+        var footerProperties: CurrencyConverterFooterView.Properties
+        var originProperties: CurrencyDisplayView.Properties
+        var destinationProperties: CurrencyDisplayView.Properties
+        var backgroundProperties: BackgroundCollectionView.Properties
+        var circleProperties: CircleWipeView.Properties
+        
         static let `default` = Properties(footerProperties: (.default, .default),
                                           originProperties: .default,
-                                          destinationProperties: .default ,backgroundProperties: .default)
+                                          destinationProperties: .default,
+                                          backgroundProperties: .default,
+                                          circleProperties: .default)
     }
    
     
     func render(_ properties: CurrencyConverterViewController.Properties) {
-        
+        circleWipe.render(properties.circleProperties)
     }
     
-    @objc func test() {
-        
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        footer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(test)))
         view.addSubview(circleWipe)
         circleWipe.edgeAnchors == view.edgeAnchors
         circleWipe.backgroundColor = .bitcoin
         
         background.onScrollRatioCompleteDidChange = { [weak self] offset in
             self?.delegate?.didScrollBackground(with: offset)
-//            self?.circleWipe.render(.init(complete: offset, color: .blue))
         }
         
         let leftAction = UIButton()

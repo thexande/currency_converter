@@ -6,6 +6,7 @@ final class CircleWipeView: UIView, ViewRendering {
     struct Properties {
         let complete: CGFloat
         let color: UIColor
+        static let `default` = Properties(complete: 0, color: .black)
     }
     
     var cachedCircle: UIView?
