@@ -93,8 +93,8 @@ final class CurrencyConverterViewController: UIViewController, ViewRendering {
         
         background.render(.init(pages: [
             .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .bitcoin),
-            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .blue),
-            .init(image: UIImage(named: "btc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .purple)
+            .init(image: UIImage(named: "eth")?.withRenderingMode(.alwaysTemplate), backgroundColor: .black),
+            .init(image: UIImage(named: "ltc")?.withRenderingMode(.alwaysTemplate), backgroundColor: .litecoin)
         ]))
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
