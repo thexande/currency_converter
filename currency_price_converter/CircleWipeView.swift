@@ -15,11 +15,11 @@ final class CircleWipeView: UIView, ViewRendering {
         static let `default` = Properties(direction: .left, complete: 0, backgroundColor: .black, circleWipeColor: .black)
     }
     
-    var cachedCircle: UIView?
     var duration = 0.3
     var animator: UIViewPropertyAnimator?
     var hasConfiguredCircle = false
     let circle = UIView()
+    var cachedOffset: CGFloat = 0
     
     
     func render(_ properties: Properties) {
@@ -32,13 +32,19 @@ final class CircleWipeView: UIView, ViewRendering {
             circle.backgroundColor = properties.circleWipeColor
         }
         
-        animator?.fractionComplete = properties.direction == .right
+        let fractionComplete = properties.direction == .right
             ? properties.complete
             : abs(1 - properties.complete)
         
-        if properties.complete == 0 {
+        animator?.fractionComplete = fractionComplete
+        
+        
+        print("cached offset \(cachedOffset)")
+        if properties.complete == 0 && cachedOffset.rounded() == 1 {
             backgroundColor = circle.backgroundColor
         }
+        
+        cachedOffset = fractionComplete
     }
     
     func frameForCircle (withViewCenter viewCenter: CGPoint, size viewSize: CGSize, startPoint: CGPoint) -> CGRect {
