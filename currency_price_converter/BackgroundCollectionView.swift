@@ -104,10 +104,10 @@ final class BackgroundCollectionView: UICollectionView, ViewRendering, UICollect
             circleWipeColor = toColor
             direction = .left
             
-//            if percentage > 0 {
-//                (cellForItem(at: .init(row: to, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = abs(1 - percentage)
-//                (cellForItem(at: .init(row: from, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = percentage
-//            }
+            if percentage > 0 {
+                (cellForItem(at: .init(row: to, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = abs(1 - percentage)
+                (cellForItem(at: .init(row: from, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = percentage
+            }
             
             print("left from: \(from), to: \(to)")
 
@@ -125,10 +125,10 @@ final class BackgroundCollectionView: UICollectionView, ViewRendering, UICollect
             print("right from: \(from), to: \(to)")
             
             
-//            if percentage > 0 {
-//                (cellForItem(at: .init(row: to, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = percentage
+            if percentage > 0 {
+                (cellForItem(at: .init(row: to, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = percentage
 //                (cellForItem(at: .init(row: from, section: 0)) as? BackgroundPageCell)?.animator?.fractionComplete = abs(1 - percentage)
-//            }
+            }
             
             backgroundColor = fromColor
             circleWipeColor = toColor

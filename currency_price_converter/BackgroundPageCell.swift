@@ -21,11 +21,17 @@ final class BackgroundPageCell: UICollectionViewCell, ViewRendering {
         backgroundImage.heightAnchor == contentView.heightAnchor * 0.8
         backgroundImage.widthAnchor == contentView.heightAnchor * 0.8
         backgroundImage.centerAnchors == contentView.centerAnchors
+//        backgroundImage.centerYAnchor == bottomAnchor
         clipsToBounds = true
         
+        let originalTransform = backgroundImage.transform
+        let scaledTransform = originalTransform.scaledBy(x: 1.8, y: 1.8)
+        let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: 0.0, y: -250.0)
+        
         animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut, animations: {
-            self.backgroundImage.transform =  CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+//            self.backgroundImage.transform = scaledAndTranslatedTransform
         })
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
