@@ -40,7 +40,7 @@ final class CurrencyConverterFooterView: UIView, ViewRendering {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        divider.backgroundColor = .lightGray
+        divider.backgroundColor = .white
         
         addSubview(background)
         background.edgeAnchors == edgeAnchors

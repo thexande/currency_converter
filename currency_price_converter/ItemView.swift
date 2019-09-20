@@ -133,7 +133,8 @@ final class ItemView: UIView, ViewRendering {
         super.init(frame: frame)
         addLayoutGuide(centerGuide)
         centerGuide.centerAnchors == centerAnchors
-        centerGuide.edgeAnchors == edgeAnchors
+        centerGuide.widthAnchor == widthAnchor * 0.75
+        centerGuide.heightAnchor == heightAnchor * 0.75
     }
     
     required init?(coder aDecoder: NSCoder) {
